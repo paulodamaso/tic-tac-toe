@@ -23,8 +23,8 @@ public final class InvalidMove implements Move {
 	}
 
 	@Override
-	public Board perform() {
-		// TODO Auto-generated method stub
+	public Move perform() {
+		//this move is invalid and cannot be performed
 		return null;
 	}
 }

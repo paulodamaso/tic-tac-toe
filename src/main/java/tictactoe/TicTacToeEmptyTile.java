@@ -13,8 +13,13 @@ import game.board.tile.TileContent;
 public class TicTacToeEmptyTile implements EmptyTile {
 
 	@Override
-	public Tile add(TileContent content) {
+	public Tile put(TileContent content) {
 		return new TicTacToeTile(content);
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		return obj instanceof EmptyTile;
 	}
 
 }

@@ -16,6 +16,13 @@ public interface Game {
 	 * @return
 	 */
 	public Match newMatch();
+	
+	/**
+	 * <p> Evaluate a {@link Move} according to game rules.
+	 * 
+	 * @param move
+	 * @return
+	 */
 	public Move evaluate(Move move);
 	
 }

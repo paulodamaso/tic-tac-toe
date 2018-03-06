@@ -7,7 +7,5 @@ package game.position;
  *
  */
 public interface Position {
-
-	public boolean equals (Position position);
 	
 }

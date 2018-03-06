@@ -5,9 +5,9 @@ package game.position;
  * @author paulodamaso
  *
  */
-public interface NullPosition extends Position {
+public final class NullPosition implements Position {
 
-	public default boolean equals(Position position) {
+	public boolean equals(Position position) {
 		return false;
 	}
 

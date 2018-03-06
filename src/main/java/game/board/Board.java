@@ -1,5 +1,7 @@
 package game.board;
 
+import java.util.Collection;
+
 import game.board.tile.Tile;
 import game.move.Move;
 import game.position.Position;
@@ -15,9 +17,9 @@ public interface Board {
 	/**
 	 * <p> The tile at {@link Position}.
 	 * @param position
-	 * @return
+	 * @return the tile located at the position sent
 	 */
-	public Tile tile(Position position);
+	public Tile tile(Position position) ;
 	
 	/**
 	 * <p> Perform the move.
@@ -26,4 +28,11 @@ public interface Board {
 	 * @return the the new board with the performed {@link Move}
 	 */
 	public Board perform (Move move);
+	
+	/**
+	 * <p> Return the tiles within the board
+	 * 
+	 * @return
+	 */
+	public Collection<Tile> tiles();
 }

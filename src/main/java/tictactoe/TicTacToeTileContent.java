@@ -16,4 +16,20 @@ public final class TicTacToeTileContent implements TileContent {
 		this.player = player;
 	}
 	
+	public Player player () {
+		return this.player;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		return 
+			player.name().contentEquals(
+					new StringBuffer(
+							(
+									(TicTacToeTileContent)obj
+							).player().name()
+						)
+					);
+	}
+	
 }

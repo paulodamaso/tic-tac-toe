@@ -1,10 +1,10 @@
 package game.move;
 
 import game.Player;
-import game.board.Board;
 
 /**
  * <p> Class representing the move made by a {@link Player}.
+ * 
  * @author paulodamaso
  *
  */
@@ -16,6 +16,10 @@ public interface Move {
 	 */
 	public Player player();
 	
-	public Board perform();
+	/**
+	 * <p> The move performed.
+	 * @return
+	 */
+	public Move perform();
 
 }

@@ -6,5 +6,8 @@ package game.board.tile;
  *
  */
 public interface TileContent {
-	
+
+	@Override
+	public boolean equals(Object obj);
+
 }

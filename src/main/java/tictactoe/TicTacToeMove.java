@@ -2,40 +2,52 @@ package tictactoe;
 
 import game.Player;
 import game.board.Board;
-import game.board.tile.Tile;
 import game.move.Move;
+import game.position.Position;
 
 /**
- * <p> A tic tac toe move, where a player put his mark in a tile.
+ * <p> A tic tac toe move, where a player put his mark in a tile .
+ * 
  * @author paulodamaso
  *
  */
 public final class TicTacToeMove implements Move {
 	
+//	private final Move move;
 	private final Player player;
-	private final Tile tile;
+	private final Position position;
+	private final Board board;
 
-	public TicTacToeMove(Player player, Tile tile) {
+	public TicTacToeMove(Move move, Player player, Position position, Board board) {
+//		this.move = move;
 		this.player = player;
-		this.tile = tile;
+		this.position = position;
+		this.board = board;
 	}
 
 	@Override
 	public Player player() {
 		return this.player;
 	}
-
-	@Override
-	public Move perform(Move move) {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public Position position() {
+		return this.position;
 	}
 
 	@Override
-	public Board perform() {
-		// TODO Auto-generated method stub
-		return null;
+	public Move perform() {
+		return 
+				new TicTacToeMove(
+				this.player, 
+				this.position, 
+				board.perform (
+						new TicTacToeMove(player, position, board)
+						board.tile(
+						this.position
+						).put(
+						new TicTacToeTileContent(this.player)
+						)
+					);
 	}
-
 
 }

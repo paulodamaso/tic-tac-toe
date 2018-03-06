@@ -8,7 +8,7 @@ package game.board.tile;
  */
 public interface Tile {
 
-	public Tile add(TileContent content);
+	public Tile put(TileContent content);
 	public TileContent content();
 
 }

@@ -6,6 +6,11 @@ import game.move.Move;
 /**
  * <p> An interface representing a match of a particular {@link Game}.
  * 
+ * <p> The expected behavior of a game regarding new moves:
+ * <ul>
+ * <li> game must evaluate a move assuring it is valid according to game rules
+ * </ul>
+ * 
  * @author paulodamaso
  *
  */
@@ -16,18 +21,13 @@ public interface Match {
 	 * @return
 	 */
 	public Game game();
-	
-	public default Match addMove (Move move) {
-		//evaluate move according to game rules
-		//perform move
-		return move(game().evaluate(move));
-	}
-	
+
 	/**
-	 * <p> Logic of each move.
+	 * <p> Add a {@link Move} to a match.
+	 * 
 	 * @param move
 	 * @return
 	 */
 	public Match move (Move move) ;
-
+	
 }

@@ -20,17 +20,27 @@ public final class BiDimensionalPosition implements Position {
 	public int y() { return this.y; }
 
 	@Override
-	public boolean equals(Object obj) {
-		if (obj == null) return false;
-		if (obj instanceof BiDimensionalPosition == false) return false;
-		return  equals(obj);
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + x;
+		result = prime * result + y;
+		return result;
 	}
 
 	@Override
-	public boolean equals(Position position) {
-		BiDimensionalPosition pos = (BiDimensionalPosition)position;
-		return ((this.x == pos.x())
-				&& (this.y == pos.y()));		
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		BiDimensionalPosition other = (BiDimensionalPosition) obj;
+		if (x != other.x)
+			return false;
+		if (y != other.y)
+			return false;
+		return true;
 	}
-
 }
