@@ -1,6 +1,7 @@
 package game.move;
 
 import game.Player;
+import game.board.Board;
 
 /**
  * <p> Class representing the move made by a {@link Player}.
@@ -14,5 +15,7 @@ public interface Move {
 	 * @return
 	 */
 	public Player player();
-	public Move perform(Move move);
+	
+	public Board perform();
+
 }

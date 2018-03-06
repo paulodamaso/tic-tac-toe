@@ -1,6 +1,7 @@
 package game.move;
 
 import game.Player;
+import game.board.Board;
 
 /**
  * <p> Decorator for saying that this move is invalid.
@@ -17,12 +18,13 @@ public final class InvalidMove implements Move {
 	}
 
 	@Override
-	public Move perform(Move move) {
-		return this;
+	public Player player() {
+		return move.player();
 	}
 
 	@Override
-	public Player player() {
-		return move.player();
+	public Board perform() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

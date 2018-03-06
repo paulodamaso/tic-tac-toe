@@ -1,6 +1,7 @@
 package tictactoe;
 
 import game.Player;
+import game.board.Board;
 import game.board.tile.Tile;
 import game.move.Move;
 
@@ -18,9 +19,23 @@ public final class TicTacToeMove implements Move {
 		this.player = player;
 		this.tile = tile;
 	}
-	
-	public boolean valid (BiDimensionalTicTacToeBoard board) {
-		
+
+	@Override
+	public Player player() {
+		return this.player;
 	}
+
+	@Override
+	public Move perform(Move move) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Board perform() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

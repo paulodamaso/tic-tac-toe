@@ -1,15 +1,14 @@
 package game.board.tile;
 
-import game.position.Position;
-
 /**
  * <p> An empty {@link Tile}
  * @author paulodamaso
  *
  */
-public interface EmptyTile<P extends Position> extends Tile<P> {
+public interface EmptyTile extends Tile {
 
-	public default boolean empty () {
-		return true;
-	} 
+	@Override
+	public default TileContent content() {
+		return new EmptyContent();
+	}
 }

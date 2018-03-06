@@ -1,7 +1,6 @@
 package game.match;
 
 import game.Game;
-import game.Player;
 import game.move.Move;
 
 /**
