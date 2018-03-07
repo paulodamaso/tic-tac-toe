@@ -8,7 +8,7 @@ package game.board.tile;
  */
 public interface Tile {
 
-	public Tile put(TileContent content);
-	public TileContent content();
+	public Tile put(TileContent content) throws Exception;
+	public TileContent content() throws Exception;
 
 }

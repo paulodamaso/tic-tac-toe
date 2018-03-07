@@ -1,6 +1,7 @@
 package game.move;
 
 import game.Player;
+import game.match.Match;
 
 /**
  * <p> Class representing the move made by a {@link Player}.
@@ -17,9 +18,10 @@ public interface Move {
 	public Player player();
 	
 	/**
-	 * <p> The move performed.
-	 * @return
+	 * <p> Perform the move an return the new {@link Match} with the move performed.
+	 *  
+	 * @return {@link Match} representing the match state after the move.
 	 */
-	public Move perform();
+	public Match perform() throws Exception;
 
 }

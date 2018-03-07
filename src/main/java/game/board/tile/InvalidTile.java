@@ -15,16 +15,18 @@ public final class InvalidTile implements Tile {
 	}
 
 	@Override
-	public Tile put(TileContent content) {
+	public Tile put(TileContent content) throws Exception{
 		//this tile is invalid!!
-		System.out.println("This tile is invalid! "+ tile);
-		return new InvalidTile(tile);
+		System.out.println();
+		throw new Exception("This tile is invalid! "+ tile);
+//		return new InvalidTile(tile);
 	}
 
 	@Override
-	public TileContent content() {
+	public TileContent content() throws Exception{
 		System.out.println("This is invalid!");
-		return tile.content();
+		throw new Exception("This tile is invalid! "+ tile);
+//		return tile.content();
 	}
 
 	@Override

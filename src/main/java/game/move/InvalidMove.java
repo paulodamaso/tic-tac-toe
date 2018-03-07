@@ -1,7 +1,7 @@
 package game.move;
 
 import game.Player;
-import game.board.Board;
+import game.match.Match;
 
 /**
  * <p> Decorator for saying that this move is invalid.
@@ -23,8 +23,8 @@ public final class InvalidMove implements Move {
 	}
 
 	@Override
-	public Move perform() {
+	public Match perform() throws Exception{
 		//this move is invalid and cannot be performed
-		return null;
+		throw new Exception("This move is invalid and cannot be performed!");
 	}
 }

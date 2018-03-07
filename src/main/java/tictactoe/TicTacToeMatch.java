@@ -1,10 +1,10 @@
 package tictactoe;
 
-import game.Game;
+import java.util.ArrayList;
+import java.util.Collection;
+
 import game.Player;
-import game.board.Board;
 import game.match.Match;
-import game.move.Move;
 
 /**
  * <p> Class representing a match of tic-tac-toe.
@@ -14,33 +14,38 @@ import game.move.Move;
  */
 public final class TicTacToeMatch implements Match {
 	
-	private final Player circles;
-	private final Player crosses;
-	
-	//class of the game being played
-	private final TicTacToeGame game;
+	private final Player player1;
+	private final Player player2;
 	
 	//the current game board
-	private final Board board;
+	private final TicTacToeBoard board;
 
 	public TicTacToeMatch(Player circle, Player cross, int size) {
-		this.circles = circle;
-		this.crosses = cross;		
-		this.board = new TicTacToeBoard(size);
-		this.game = new TicTacToeGame(this.board);
+		this(circle, cross, new TicTacToeBoard(size));
+	}
+	
+	public TicTacToeMatch(Player player1, Player player2, TicTacToeBoard board) {
+		this.player1 = player1;
+		this.player2 = player2;		
+		this.board = board;
+	}
+	
+	public TicTacToeBoard board() {
+		return this.board;
 	}
 
 	@Override
-	public Game game() {
-		// TODO Auto-generated method stub
-		return null;
+	public Collection<Player> players() {
+		ArrayList<Player> players = new ArrayList<>();
+		players.add(this.player1);
+		players.add(this.player2);
+		return players;
 	}
 
 	@Override
-	public Match move(Move move) {
-		// TODO Auto-generated method stub
+	public Match check() {
+		//check winning conditions in board, return new finished match or normal match 
 		return null;
 	}
-
-
+	
 }

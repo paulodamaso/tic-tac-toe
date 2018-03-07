@@ -8,7 +8,7 @@ import game.board.Board;
 import game.board.tile.EmptyTile;
 import game.board.tile.InvalidTile;
 import game.board.tile.Tile;
-import game.move.Move;
+import game.board.tile.TileContent;
 import game.position.BiDimensionalPosition;
 import game.position.Position;
 
@@ -45,30 +45,14 @@ public final class TicTacToeBoard implements Board {
 		return tiles.get(position) != null ? tiles.get(position) : new InvalidTile(new TicTacToeEmptyTile());
 	}
 
-	@Override
-	public Board perform(Move move) {
-		//who says that this move is valid?
-		
-		
-		TicTacToeMove tttm = (TicTacToeMove)move;
-		tiles.put(
-				tttm.position(),
-				tile(
-						tttm.position()
-					).put(
-						new TicTacToeTileContent(
-						tttm.player()
-						)
-					)
-				)
-;
-		return new TicTacToeBoard(tiles);
-
+	public Collection<Tile> tiles() {
+		return tiles.values();
 	}
 
 	@Override
-	public Collection<Tile> tiles() {
-		return tiles.values();
+	public TicTacToeBoard add(Position position, TileContent tileContent) throws Exception{
+		tiles.put(position, tile(position).put(tileContent));
+		return new TicTacToeBoard(tiles);
 	}
 
 }

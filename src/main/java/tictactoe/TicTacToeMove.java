@@ -1,7 +1,7 @@
 package tictactoe;
 
 import game.Player;
-import game.board.Board;
+import game.match.Match;
 import game.move.Move;
 import game.position.Position;
 
@@ -13,16 +13,14 @@ import game.position.Position;
  */
 public final class TicTacToeMove implements Move {
 	
-//	private final Move move;
 	private final Player player;
 	private final Position position;
-	private final Board board;
+	private final TicTacToeMatch match;
 
-	public TicTacToeMove(Move move, Player player, Position position, Board board) {
-//		this.move = move;
+	public TicTacToeMove(Player player, Position position, TicTacToeMatch match) {
 		this.player = player;
 		this.position = position;
-		this.board = board;
+		this.match = match;
 	}
 
 	@Override
@@ -35,18 +33,27 @@ public final class TicTacToeMove implements Move {
 	}
 
 	@Override
-	public Move perform() {
+	public Match perform() throws Exception{
+		/**
+		 * Tic tac toe rules:
+		 * - the player cannot put a mark outside the board;
+		 * - the player cannot put a mark in an non-empty tile;	 
+		 * 
+		 *  Movement:
+		 *  - puts the mark in the tile 
+		 *  
+		 *  Check winner (finished match)
+		 */
+		//put player mark in tile sent
+		//return the populated tile or invalid tile
+//		Tile tl = board.tile(this.position).put();
+//		board.put(new TicTacToeTile(new TicTacToeTileContent(this.player)), this.position);
+		
 		return 
-				new TicTacToeMove(
-				this.player, 
-				this.position, 
-				board.perform (
-						new TicTacToeMove(player, position, board)
-						board.tile(
-						this.position
-						).put(
-						new TicTacToeTileContent(this.player)
-						)
+				new TicTacToeMatch(
+				this.match.players().iterator().next(), 
+				this.match.players().iterator().next(), 
+				this.match.board().add(this.position, new TicTacToeTileContent(this.player))
 					);
 	}
 

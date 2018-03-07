@@ -1,6 +1,5 @@
 package tictactoe;
 
-import game.board.tile.InvalidTile;
 import game.board.tile.Tile;
 import game.board.tile.TileContent;
 
@@ -13,9 +12,10 @@ public final class TicTacToeTile implements Tile {
 	}
 
 	@Override
-	public Tile put(TileContent content) {
+	public Tile put(TileContent content) throws Exception {
 		//cannot overwrite content in tile; must return invalid tile exception
-		return new InvalidTile(this);
+		throw new Exception();
+
 	}
 
 	@Override
@@ -25,8 +25,12 @@ public final class TicTacToeTile implements Tile {
 	
 	@Override
 	public boolean equals(Object obj) {
-		TileContent tileContent = ((Tile)obj).content();
-		return content.equals(tileContent);
+		try {
+			TileContent tileContent = ((Tile)obj).content();
+			return content.equals(tileContent);
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 }
