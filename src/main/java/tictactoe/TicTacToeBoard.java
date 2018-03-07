@@ -36,6 +36,34 @@ public final class TicTacToeBoard implements Board {
 		}
 	}
 	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((tiles == null) ? 0 : tiles.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		TicTacToeBoard other = (TicTacToeBoard) obj;
+
+		if (tiles == null) {
+			if (other.tiles != null)
+				return false;
+		} else if (!tiles.equals(other.tiles)
+				) 
+			return false;
+		
+		return true;
+	}
+
 	public TicTacToeBoard(Map<Position, Tile> tiles) {
 		this.tiles = tiles;
 	}

@@ -33,7 +33,9 @@ public class TicTacToeTileTest {
 		
 		//try to put something in it, throws exception
 		assertThrows(Exception.class, 
-				() -> tile.put(new TicTacToeTileContent(new SimplePlayer("player2"))));
+				() -> tile.put(new TicTacToeTileContent(new SimplePlayer("player2"))
+						)
+				);
 	}
 	
 	@Test
