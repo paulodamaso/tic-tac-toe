@@ -1,20 +1,24 @@
-package tictactoe;
+package game.board.tile;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.Test;
 
 import game.SimplePlayer;
+import game.board.tile.EmptyTile;
+import tictactoe.TicTacToeEmptyTile;
+import tictactoe.TicTacToeTile;
+import tictactoe.TicTacToeTileContent;
 
 /**
- * <p> Tests related to {@link TicTacToeEmptyTile} class.
+ * <p> Tests related to {@link EmptyTile} class.
  * 
  * @author paulodamaso
  *
  */
-public class TicTacToeEmptyTileTest {
+public class EmptyTileTest {
 
-	public TicTacToeEmptyTileTest() {
+	public EmptyTileTest() {
 		// TODO Auto-generated constructor stub
 	}
 	

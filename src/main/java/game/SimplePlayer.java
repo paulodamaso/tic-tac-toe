@@ -1,7 +1,5 @@
 package game;
 
-import game.move.Move;
-
 /**
  * <p> Simple player.
  * @author paulodamaso
@@ -24,6 +22,11 @@ public class SimplePlayer implements Player {
 	}
 
 	@Override
+	public String name() {
+		return this.name;
+	}
+
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -32,23 +35,7 @@ public class SimplePlayer implements Player {
 		if (getClass() != obj.getClass())
 			return false;
 		SimplePlayer other = (SimplePlayer) obj;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		return true;
-	}
-
-	@Override
-	public String name() {
-		return this.name;
-	}
-
-	@Override
-	public Move move(Move move) {
-		// TODO Auto-generated method stub
-		return null;
+		return (this.name.equals(other.name()));
 	}
 
 }

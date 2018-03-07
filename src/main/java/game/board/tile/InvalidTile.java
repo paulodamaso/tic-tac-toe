@@ -33,25 +33,13 @@ public final class InvalidTile implements Tile {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((tile == null) ? 0 : tile.hashCode());
+		result = prime * result + 0;
 		return result;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		InvalidTile other = (InvalidTile) obj;
-		if (tile == null) {
-			if (other.tile != null)
-				return false;
-		} else if (!tile.equals(other.tile))
-			return false;
-		return true;
+		return obj instanceof InvalidTile;
 	}
 
 }

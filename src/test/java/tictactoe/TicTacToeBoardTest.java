@@ -103,7 +103,15 @@ public class TicTacToeBoardTest {
 		board = new TicTacToeBoard(3);
 		assertTrue(board.equals(otherBoard));
 		
-		
+		//hashcode test, equal objects
+		board = new TicTacToeBoard(3);
+		otherBoard = new TicTacToeBoard(3);
+		assertTrue(board.hashCode() == otherBoard.hashCode());
+
+		//hashcode test, non-equal objects
+		board = new TicTacToeBoard(null);
+		otherBoard = new TicTacToeBoard(5);
+		assertFalse(board.hashCode() == otherBoard.hashCode());
 		
 	}
 

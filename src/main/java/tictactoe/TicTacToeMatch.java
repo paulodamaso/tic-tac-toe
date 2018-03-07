@@ -20,8 +20,8 @@ public final class TicTacToeMatch implements Match {
 	//the current game board
 	private final TicTacToeBoard board;
 
-	public TicTacToeMatch(Player circle, Player cross, int size) {
-		this(circle, cross, new TicTacToeBoard(size));
+	public TicTacToeMatch(Player player1, Player player2, int size) {
+		this(player1, player2, new TicTacToeBoard(size));
 	}
 	
 	public TicTacToeMatch(Player player1, Player player2, TicTacToeBoard board) {

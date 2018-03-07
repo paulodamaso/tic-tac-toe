@@ -10,7 +10,7 @@ import game.board.tile.TileContent;
  *
  */
 
-public class TicTacToeEmptyTile implements EmptyTile {
+public final class TicTacToeEmptyTile implements EmptyTile {
 
 	@Override
 	public Tile put(TileContent content) {
@@ -20,6 +20,11 @@ public class TicTacToeEmptyTile implements EmptyTile {
 	@Override
 	public boolean equals(Object obj) {
 		return obj instanceof EmptyTile;
+	}
+	
+	@Override
+	public int hashCode() {
+		return 15;
 	}
 
 }
