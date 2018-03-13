@@ -4,13 +4,15 @@ import game.Player;
 import game.board.tile.TileContent;
 
 /**
- * <p> The content of a tic tac toe game tile.
+ * <p> The content of a tic tac toe game tile. In this game, the content of a tile
+ * is just a reference to the player which marked the tile.
+ * 
  * @author paulodamaso
  *
  */
 public final class TicTacToeTileContent implements TileContent {
 
-	private Player player;
+	private final Player player;
 	
 	public TicTacToeTileContent(Player player) {
 		this.player = player;

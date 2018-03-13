@@ -23,6 +23,14 @@ public interface Board {
 	 */
 	public Tile tile(Position position) ;
 	
+	/**
+	 * <p> Add content to a tile position in board.
+	 *  
+	 * @param position the position of the tile to have content added
+	 * @param tileContent content to be added
+	 * @return new board configuration
+	 * @throws Exception if some exception is raised in the process
+	 */
 	public Board add(Position position, TileContent tileContent) throws Exception;
 	
 }
