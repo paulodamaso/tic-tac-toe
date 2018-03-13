@@ -28,7 +28,7 @@ public final class InvalidTile implements Tile {
 	public TileContent content() throws Exception{
 		System.out.println("This is invalid!");
 		/**
-		 * @todo #3 return an invalid tile exception 
+		 * @todo #3  invalid tile exception 
 		 */
 		throw new Exception("This tile is invalid! "+ tile);
 	}
