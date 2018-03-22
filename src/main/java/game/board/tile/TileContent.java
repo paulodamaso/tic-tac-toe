@@ -9,5 +9,12 @@ public interface TileContent {
 
 	@Override
 	public boolean equals(Object obj);
+	
+	public default boolean equals(Object...objects ) {
+		for (Object obj : objects) {
+			if (!equals(obj)) return false;
+		}
+		return true;
+	}
 
 }

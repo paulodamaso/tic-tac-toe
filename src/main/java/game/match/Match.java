@@ -15,13 +15,13 @@ import game.move.Move;
 public interface Match {
 
 	/**
-	 * <p> Add a {@link Move} to a match.
+	 * <p> Add a {@link Move} to a match and checks if it has reached a ending condition.
 	 * 
 	 * @param move
 	 * @return
 	 */
 	public default Match move (Move move) throws Exception{
-		return move.perform();
+		return move.perform().check();
 	};
 	
 	/**
@@ -30,7 +30,8 @@ public interface Match {
 	public Collection<Player> players();
 	
 	/**
-	 * <p> Check winning conditions for the match.
+	 * <p> Check ending conditions for the match, returning the current match as a immutable object.
+	 * 
 	 * @return
 	 */
 	public Match check();

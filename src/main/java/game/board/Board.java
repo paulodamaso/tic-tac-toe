@@ -4,6 +4,7 @@ import game.board.tile.EmptyContent;
 import game.board.tile.InvalidTile;
 import game.board.tile.Tile;
 import game.board.tile.TileContent;
+import game.match.Match;
 import game.position.Position;
 
 /**
@@ -32,5 +33,11 @@ public interface Board {
 	 * @throws Exception if some exception is raised in the process
 	 */
 	public Board add(Position position, TileContent tileContent) throws Exception;
-	
+
+	/**
+	 * <p> Check for ending conditions for this board.
+	 * 
+	 * @return match with ending conditions
+	 */
+	public Match check();
 }

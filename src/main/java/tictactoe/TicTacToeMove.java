@@ -51,10 +51,10 @@ public final class TicTacToeMove implements Move {
 		
 		return 
 				new TicTacToeMatch(
-				this.match.players().iterator().next(), 
-				this.match.players().iterator().next(), 
-				this.match.board().add(this.position, new TicTacToeTileContent(this.player))
-					);
+						this.match.players().iterator().next(), 
+						this.match.players().iterator().next(), 
+						this.match.board().add(this.position, new TicTacToeTileContent(this.player))
+					).check();
 	}
 
 }

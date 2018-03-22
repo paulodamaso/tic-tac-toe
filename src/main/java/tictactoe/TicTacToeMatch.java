@@ -81,8 +81,9 @@ public final class TicTacToeMatch implements Match {
 
 	@Override
 	public Match check() {
-		//check winning conditions in board, return new finished match or normal match 
-		return null;
+		//check winning conditions in board, return new finished match or normal match
+		//checks board the game state
+		return board.c;
 	}
 	
 }

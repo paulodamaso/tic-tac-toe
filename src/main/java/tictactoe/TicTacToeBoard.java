@@ -9,6 +9,7 @@ import game.board.tile.EmptyTile;
 import game.board.tile.InvalidTile;
 import game.board.tile.Tile;
 import game.board.tile.TileContent;
+import game.match.Match;
 import game.position.BiDimensionalPosition;
 import game.position.Position;
 
@@ -81,6 +82,48 @@ public final class TicTacToeBoard implements Board {
 	public TicTacToeBoard add(Position position, TileContent tileContent) throws Exception{
 		tiles.put(position, tile(position).put(tileContent));
 		return new TicTacToeBoard(tiles);
+	}
+
+	@Override
+	public Match check() {
+		if(tiles.get(new BiDimensionalPosition(0,0)).content().equals(
+				new Object[] {tiles.get(new BiDimensionalPosition(0,1)), tiles.get(new BiDimensionalPosition(0,1))}
+				)) {
+		}
+		//first row
+		tiles.get(new BiDimensionalPosition(0,0));
+		;
+		tiles.get(new BiDimensionalPosition(0,2));
+		//second row
+		tiles.get(new BiDimensionalPosition(1,0));
+		tiles.get(new BiDimensionalPosition(1,1));
+		tiles.get(new BiDimensionalPosition(2,2));
+		//thrid row
+		tiles.get(new BiDimensionalPosition(2,0));
+		tiles.get(new BiDimensionalPosition(2,1));
+		tiles.get(new BiDimensionalPosition(2,2));
+		//first column
+		tiles.get(new BiDimensionalPosition(0,0));
+		tiles.get(new BiDimensionalPosition(1,0));
+		tiles.get(new BiDimensionalPosition(2,0));
+		//second column
+		tiles.get(new BiDimensionalPosition(0,1));
+		tiles.get(new BiDimensionalPosition(1,1));
+		tiles.get(new BiDimensionalPosition(2,1));
+		//third column
+		tiles.get(new BiDimensionalPosition(0,2));
+		tiles.get(new BiDimensionalPosition(1,2));
+		tiles.get(new BiDimensionalPosition(2,2));
+		//left to right diagonal
+		tiles.get(new BiDimensionalPosition(0,0));
+		tiles.get(new BiDimensionalPosition(1,1));
+		tiles.get(new BiDimensionalPosition(2,2));
+		//right to left diagonal
+		tiles.get(new BiDimensionalPosition(0,2));
+		tiles.get(new BiDimensionalPosition(1,1));
+		tiles.get(new BiDimensionalPosition(2,0));
+		return null;
+
 	}
 
 }
