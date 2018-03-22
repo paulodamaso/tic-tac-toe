@@ -83,6 +83,8 @@ public final class TicTacToeMatch implements Match {
 	public Match check() {
 		//check winning conditions in board, return new finished match or normal match
 		//checks board the game state
+		//check draw if no availble cell
+		//
 		return board.c;
 	}
 	
