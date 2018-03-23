@@ -1,4 +1,4 @@
-package game.match;
+package game.result;
 
 import java.util.Collection;
 

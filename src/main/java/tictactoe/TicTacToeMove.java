@@ -54,7 +54,7 @@ public final class TicTacToeMove implements Move {
 						this.match.players().iterator().next(), 
 						this.match.players().iterator().next(), 
 						this.match.board().add(this.position, new TicTacToeTileContent(this.player))
-					).check();
+					);
 	}
 
 }

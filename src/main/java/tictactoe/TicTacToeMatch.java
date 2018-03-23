@@ -85,7 +85,7 @@ public final class TicTacToeMatch implements Match {
 		//checks board the game state
 		//check draw if no availble cell
 		//
-		return board.c;
+		return null;
 	}
 	
 }

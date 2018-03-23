@@ -4,8 +4,8 @@ import game.board.tile.EmptyContent;
 import game.board.tile.InvalidTile;
 import game.board.tile.Tile;
 import game.board.tile.TileContent;
-import game.match.Match;
 import game.position.Position;
+import game.result.Result;
 
 /**
  * <p> Interface representing a game board.
@@ -37,7 +37,7 @@ public interface Board {
 	/**
 	 * <p> Check for ending conditions for this board.
 	 * 
-	 * @return match with ending conditions
+	 * @return board 
 	 */
-	public Match check();
+	public Result check() throws Exception;
 }

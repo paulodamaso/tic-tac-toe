@@ -1,5 +1,7 @@
 package game.match;
 
+import game.result.Result;
+
 /**
  * <p> A finished match, which has a result.
  *  

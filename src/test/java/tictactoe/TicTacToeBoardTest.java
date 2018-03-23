@@ -8,7 +8,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.Test;
 
+import game.Player;
 import game.SimplePlayer;
+import game.board.Board;
 import game.board.tile.InvalidTile;
 import game.board.tile.Tile;
 import game.position.BiDimensionalPosition;
@@ -113,6 +115,142 @@ public class TicTacToeBoardTest {
 		otherBoard = new TicTacToeBoard(5);
 		assertFalse(board.hashCode() == otherBoard.hashCode());
 		
+	}
+	
+	@Test
+	public void checkTest () throws Exception {
+		//test for checking ending game conditions, according to the board state
+		//ending condition for a tic tac toe game:
+		// any line
+		// any column
+		//left to right diagonal
+		//right to left diagonal
+		Player player1 = new SimplePlayer("X");
+		Player player2 = new SimplePlayer("O");
+		
+		
+		// x |   |   
+		// x |   |
+		// x |   |
+		//x wins, checks who's winner
+		Board board = new TicTacToeBoard(3);
+		board.add(new BiDimensionalPosition(0, 0), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(0, 1), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(0, 2), new TicTacToeTileContent(player1));
+		board.check();
+		//		assertEquals(player1, board.check().check());
+		
+		//   | X |   
+		//   | X |
+		//   | X |
+		//x wins, checks who's winner
+		board = new TicTacToeBoard(3);
+		board.add(new BiDimensionalPosition(1, 0), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(1, 1), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(1, 2), new TicTacToeTileContent(player1));
+		board.check();
+		
+		//   |   | X   
+		//   |   | X
+		//   |   | X
+		//x wins, checks who's winner
+		board = new TicTacToeBoard(3);
+		board.add(new BiDimensionalPosition(2, 0), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(2, 1), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(2, 2), new TicTacToeTileContent(player1));
+		board.check();
+		
+		// x | x | x   
+		//   |   |
+		//   |   |
+		//x wins, checks who's winner
+		board = new TicTacToeBoard(3);
+		board.add(new BiDimensionalPosition(0, 0), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(1, 0), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(2, 0), new TicTacToeTileContent(player1));
+		board.check();
+		//		assertEquals(player1, board.check().check());
+		
+		//   |   |   
+		// X | X | X
+		//   |   |
+		//x wins, checks who's winner
+		board = new TicTacToeBoard(3);
+		board.add(new BiDimensionalPosition(0, 1), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(1, 1), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(2, 1), new TicTacToeTileContent(player1));
+		board.check();
+		
+		//   |   |    
+		//   |   | 
+		// X | X | X 
+		//x wins, checks who's winner
+		board = new TicTacToeBoard(3);
+		board.add(new BiDimensionalPosition(0, 2), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(1, 2), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(2, 2), new TicTacToeTileContent(player1));
+		board.check();
+		
+		// X |   |    
+		//   | X | 
+		//   |   | X 
+		//x wins, checks who's winner
+		board = new TicTacToeBoard(3);
+		board.add(new BiDimensionalPosition(0, 0), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(1, 1), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(2, 2), new TicTacToeTileContent(player1));
+		board.check();
+		
+		//   |   | X    
+		//   | X | 
+		// X |   |   
+		//x wins, checks who's winner
+		board = new TicTacToeBoard(3);
+		board.add(new BiDimensionalPosition(0, 2), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(1, 1), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(2, 0), new TicTacToeTileContent(player1));
+		board.check();
+
+		// X | O | O    
+		// O | X | X
+		// X | X | O  
+		//draw
+		//checks draw (full board, no winner)
+		board = new TicTacToeBoard(3);
+		board.add(new BiDimensionalPosition(0, 0), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(0, 1), new TicTacToeTileContent(player2));
+		board.add(new BiDimensionalPosition(0, 2), new TicTacToeTileContent(player2));
+		board.add(new BiDimensionalPosition(1, 0), new TicTacToeTileContent(player2));
+		board.add(new BiDimensionalPosition(1, 1), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(1, 2), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(2, 0), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(2, 1), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(2, 2), new TicTacToeTileContent(player2));
+		board.check();
+		
+
+		
+		
+		//
+		
+//		try {
+//				
+//				TicTacToeBoard board = null;
+//				
+//				//any line
+//				int dimension = new Double(Math.sqrt(new Integer(board.tiles().size()).doubleValue())).intValue();
+//				
+//				for(int i = 0; i< dimension; i++) {
+//					boolean line = true;
+//					//check if all lines are
+//					int j = 0;
+//					while(line && j < dimension) {
+//						line = line && board.tile(new BiDimensionalPosition(0, 0)).content().equals(board.tile(new BiDimensionalPosition(i, j)).content());
+//					}
+//				}
+//		}catch (Exception e) {
+//			// TODO: handle exception
+//		}
 	}
 
 }
