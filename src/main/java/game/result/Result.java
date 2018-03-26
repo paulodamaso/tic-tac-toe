@@ -1,8 +1,6 @@
 package game.result;
 
-import java.util.Collection;
-
-import game.Player;
+import game.Players;
 
 /**
  * <p> Class representing the result of a match.
@@ -11,16 +9,8 @@ import game.Player;
  *
  */
 public interface Result {
-
-	/**
-	 * <p> Winners of the match.
-	 * @return
-	 */
-	public Collection<Player> winners();
 	
-	/**
-	 * <p> Losers of the match.
-	 * @return
-	 */
-	public Collection<Player> losers();
+	public Players winners();
+	public Players losers();
+
 }

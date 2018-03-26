@@ -9,7 +9,7 @@ import org.junit.Test;
 import game.SimplePlayer;
 
 /**
- * <p> Tests related to {@link TicTacToeTile} class.
+ * <p> Tests related to {@link TicTacToeTileImp} class.
  * 
  * @author paulodamaso
  *
@@ -29,7 +29,7 @@ public class TicTacToeTileTest {
 		//- invalid tile if this tile is occupied
 		
 		//create a tile already populated
-		TicTacToeTile tile = new TicTacToeTile(new TicTacToeTileContent(new SimplePlayer("player1")));
+		TicTacToeTileImp tile = new TicTacToeTileImp(new TicTacToeTileContent(new SimplePlayer("player1")));
 		
 		//try to put something in it, throws exception
 		assertThrows(Exception.class, 
@@ -41,12 +41,12 @@ public class TicTacToeTileTest {
 	@Test
 	public void equalsTest() {
 		assertTrue(
-				new TicTacToeTile(
+				new TicTacToeTileImp(
 						new TicTacToeTileContent(
 								new SimplePlayer("Paulo")
 								)
 						).equals(
-								new TicTacToeTile(
+								new TicTacToeTileImp(
 										new TicTacToeTileContent(
 												new SimplePlayer("Paulo")
 												)
@@ -54,7 +54,7 @@ public class TicTacToeTileTest {
 								)
 				);
 		assertFalse(
-				new TicTacToeTile(
+				new TicTacToeTileImp(
 						new TicTacToeTileContent(
 								new SimplePlayer("Paulo")
 								)

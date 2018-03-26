@@ -5,12 +5,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.util.ArrayList;
-
 import org.junit.Test;
 
-import game.Player;
+import game.Players;
 import game.SimplePlayer;
+import game.SimplePlayers;
 
 /**
  * <p> Tests related to {@link TicTacToeMatch}.
@@ -151,15 +150,15 @@ public class TicTacToeMatchTest {
 		SimplePlayer player1 = new SimplePlayer("player1");
 		SimplePlayer player2 = new SimplePlayer("player2");
 		TicTacToeMatch match = new TicTacToeMatch(player1, player2, 3);
-		ArrayList<Player> players = new ArrayList<>();
-		players.add(player1);
-		players.add(player2);
+		
+		Players players = new SimplePlayers(new SimplePlayer[] {player1, player2} );
 		
 		assertTrue(players.equals(match.players()));
 	}
 	
 	@Test
 	public void checkTest() {
+		//testing the ending conditions for a match
 		TicTacToeMatch  match = new TicTacToeMatch(new SimplePlayer("player1"), new SimplePlayer("player2"), 3);
 		assertNull(match.check());
 	}

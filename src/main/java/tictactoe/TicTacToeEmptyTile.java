@@ -1,7 +1,6 @@
 package tictactoe;
 
 import game.board.tile.EmptyTile;
-import game.board.tile.Tile;
 import game.board.tile.TileContent;
 
 /**
@@ -10,11 +9,11 @@ import game.board.tile.TileContent;
  *
  */
 
-public final class TicTacToeEmptyTile implements EmptyTile {
+public final class TicTacToeEmptyTile implements EmptyTile, TicTacToeTile {
 
 	@Override
-	public Tile put(TileContent content) {
-		return new TicTacToeTile(content);
+	public TicTacToeTile put(TileContent content) {
+		return new TicTacToeTileImp(content);
 	}
 	
 	@Override

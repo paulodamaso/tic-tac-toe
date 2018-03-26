@@ -1,6 +1,5 @@
 package game.board;
 
-import game.board.tile.EmptyContent;
 import game.board.tile.InvalidTile;
 import game.board.tile.Tile;
 import game.board.tile.TileContent;
@@ -37,7 +36,7 @@ public interface Board {
 	/**
 	 * <p> Check for ending conditions for this board.
 	 * 
-	 * @return board 
+	 * @return result of the board 
 	 */
 	public Result check() throws Exception;
 }

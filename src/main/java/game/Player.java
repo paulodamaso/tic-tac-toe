@@ -1,5 +1,7 @@
 package game;
 
+import game.move.Move;
+
 /**
  * <p> Class representing a player.
  * 
@@ -9,5 +11,6 @@ package game;
 public interface Player {
 
 	public String name();
-//	public Move move(Move move);
+	
+	public Move move();
 }

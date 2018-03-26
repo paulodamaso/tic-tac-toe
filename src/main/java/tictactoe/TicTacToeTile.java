@@ -1,46 +1,25 @@
 package tictactoe;
 
+import game.board.tile.InvalidTile;
 import game.board.tile.Tile;
 import game.board.tile.TileContent;
 
 /**
- * <p> {@link Tile} implementation for a tic tac toe game.
+ * <p> A tile abstraction in a tic tac toe game.
  * 
- * @author paulo
+ * @author paulodamaso
  *
  */
-public final class TicTacToeTile implements Tile {
+public interface TicTacToeTile extends Tile {
 	
-	private final TileContent content;
-	
-	public TicTacToeTile(TileContent content) {
-		this.content = content;
-	}
-
-	@Override
-	public Tile put(TileContent content) throws Exception {
-		//cannot overwrite content in tile; must return invalid tile exception
-		/**
-		 * @todo #3 return an exception indicating that the content of the tile cannot
-		 *  be overwritten 
-		 */
-		throw new Exception();
-
-	}
-
-	@Override
-	public TileContent content() {
-		return this.content;
-	}
-	
-	@Override
-	public boolean equals(Object obj) {
-		try {
-			TileContent tileContent = ((Tile)obj).content();
-			return content.equals(tileContent);
-		} catch (Exception e) {
-			return false;
-		}
-	}
+	/**
+	 * <p> Put content in an board tile.
+	 * 
+	 * @param content content to be put to this tile
+	 * @return
+	 * @throws Exception if some exception occurs in the operation, for example, if the tile
+	 * is an {@link InvalidTile}.
+	 */
+	public TicTacToeTile put(TileContent content) throws Exception;
 
 }

@@ -1,9 +1,8 @@
 package tictactoe;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 import game.Player;
+import game.Players;
+import game.SimplePlayers;
 import game.match.Match;
 
 /**
@@ -22,6 +21,11 @@ public final class TicTacToeMatch implements Match {
 
 	public TicTacToeMatch(Player player1, Player player2, int size) {
 		this(player1, player2, new TicTacToeBoard(size));
+		try {
+			this.play();
+		}catch (Exception e) {
+			
+		}
 	}
 	
 	public TicTacToeMatch(Player player1, Player player2, TicTacToeBoard board) {
@@ -72,20 +76,21 @@ public final class TicTacToeMatch implements Match {
 	}
 
 	@Override
-	public Collection<Player> players() {
-		ArrayList<Player> players = new ArrayList<>();
-		players.add(this.player1);
-		players.add(this.player2);
-		return players;
+	public Match check() {
+		try {		
+			// in tic tac toe a match is finished when:
+			// board signal that an ending condition has been reached, return new finished match or normal match
+			this.board.check();
+		}catch(Exception e) {
+
+			//
+		}
+		return null;
 	}
 
 	@Override
-	public Match check() {
-		//check winning conditions in board, return new finished match or normal match
-		//checks board the game state
-		//check draw if no availble cell
-		//
-		return null;
+	public Players players() {
+		return new SimplePlayers(new Player[]{this.player1, this.player2}) ;
 	}
 	
 }

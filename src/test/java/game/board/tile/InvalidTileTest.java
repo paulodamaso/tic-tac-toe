@@ -8,7 +8,7 @@ import org.junit.Test;
 import game.SimplePlayer;
 import game.board.tile.InvalidTile;
 import tictactoe.TicTacToeEmptyTile;
-import tictactoe.TicTacToeTile;
+import tictactoe.TicTacToeTileImp;
 import tictactoe.TicTacToeTileContent;
 
 public class InvalidTileTest {
@@ -52,7 +52,7 @@ public class InvalidTileTest {
 
 		//hashcode test, non-equal objects, must be equal: all invalid tiles are equals (?)
 		tile = new InvalidTile(new TicTacToeEmptyTile());
-		anotherTile = new InvalidTile(new TicTacToeTile(new TicTacToeTileContent(new SimplePlayer("player1"))));
+		anotherTile = new InvalidTile(new TicTacToeTileImp(new TicTacToeTileContent(new SimplePlayer("player1"))));
 		assertTrue(tile.hashCode() == anotherTile.hashCode());		
 	}
 

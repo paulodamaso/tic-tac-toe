@@ -7,7 +7,7 @@ import org.junit.Test;
 import game.SimplePlayer;
 import game.board.tile.EmptyTile;
 import tictactoe.TicTacToeEmptyTile;
-import tictactoe.TicTacToeTile;
+import tictactoe.TicTacToeTileImp;
 import tictactoe.TicTacToeTileContent;
 
 /**
@@ -26,7 +26,7 @@ public class EmptyTileTest {
 	public void putTest() {
 		//putting a value in an EmptyTile must return a new tile with content
 		assertEquals(
-				new TicTacToeTile(
+				new TicTacToeTileImp(
 						new TicTacToeTileContent(
 								new SimplePlayer("player")
 								)

@@ -1,5 +1,7 @@
 package game;
 
+import game.move.Move;
+
 /**
  * <p> Simple player.
  * @author paulodamaso
@@ -36,6 +38,12 @@ public class SimplePlayer implements Player {
 			return false;
 		SimplePlayer other = (SimplePlayer) obj;
 		return (this.name.equals(other.name()));
+	}
+
+	@Override
+	public Move move() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

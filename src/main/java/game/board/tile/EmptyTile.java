@@ -1,7 +1,9 @@
 package game.board.tile;
 
 /**
- * <p> An empty {@link Tile}
+ * <p> An empty {@link Tile}. Each game rules must specify how an empty tile must
+ * behave. 
+ * 
  * @author paulodamaso
  *
  */

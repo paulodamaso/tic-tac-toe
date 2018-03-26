@@ -137,8 +137,8 @@ public class TicTacToeBoardTest {
 		board.add(new BiDimensionalPosition(0, 0), new TicTacToeTileContent(player1));
 		board.add(new BiDimensionalPosition(0, 1), new TicTacToeTileContent(player1));
 		board.add(new BiDimensionalPosition(0, 2), new TicTacToeTileContent(player1));
-		board.check();
-		//		assertEquals(player1, board.check().check());
+		//the winner must be player 1
+		assertEquals(player1, board.check().winners().next());
 		
 		//   | X |   
 		//   | X |

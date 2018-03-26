@@ -1,19 +1,15 @@
 package tictactoe;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
 import game.board.Board;
 import game.board.tile.EmptyTile;
-import game.board.tile.InvalidTile;
-import game.board.tile.Tile;
 import game.board.tile.TileContent;
 import game.position.BiDimensionalPosition;
 import game.position.Position;
 import game.result.Result;
-import game.result.SimpleResult;
 
 /**
  * <p> A tic tac toe game board.
@@ -25,11 +21,11 @@ import game.result.SimpleResult;
  */
 public final class TicTacToeBoard implements Board {
 	
-	private final Map<Position, Tile> tiles;
+	private final Map<Position, TicTacToeTile> tiles;
 	
 	public TicTacToeBoard(int size) {
 		this(new HashMap<>(size*size));
-//		this.size = size;
+
 		for (int i =0 ; i < size; i++) {
 			for (int j =0 ; j < size; j++) {
 				tiles.put(
@@ -69,16 +65,16 @@ public final class TicTacToeBoard implements Board {
 		return true;
 	}
 
-	public TicTacToeBoard(Map<Position, Tile> tiles) {
+	public TicTacToeBoard(Map<Position, TicTacToeTile> tiles) {
 		this.tiles = tiles;
 	}
 
 	@Override
-	public Tile tile(Position position) {
-		return tiles.get(position) != null ? tiles.get(position) : new InvalidTile(new TicTacToeEmptyTile());
+	public TicTacToeTile tile(Position position) {
+		return tiles.get(position) != null ? tiles.get(position) : new TicTacToeInvalidTile();
 	}
 
-	public Collection<Tile> tiles() {
+	public Collection<TicTacToeTile> tiles() {
 		return tiles.values();
 	}
 
@@ -111,7 +107,7 @@ public final class TicTacToeBoard implements Board {
 						j++;
 					}
 					//we have a winner in line i, return tile content?
-					if (line) return new SimpleResult(new ArrayList<>(), new ArrayList<>());
+//					if (line) return new WinResult(new SimplePlayers(winner), new SimplePlayers(players))
 				}
 				
 				//column check
@@ -124,7 +120,7 @@ public final class TicTacToeBoard implements Board {
 						j++;
 					}
 					//we have a winner in column i, return tile content?
-					if (line) return new SimpleResult(new ArrayList<>(), new ArrayList<>());
+//					if (line) return new SimpleResult(new ArrayList<>(), new ArrayList<>());
 				}
 				
 				//left diagonal check
@@ -138,7 +134,7 @@ public final class TicTacToeBoard implements Board {
 						j++;
 					}
 					//we have a winner in left diagonal, return tile content?
-					if (line) return new SimpleResult(new ArrayList<>(), new ArrayList<>());
+//					if (line) return new SimpleResult(new ArrayList<>(), new ArrayList<>());
 				}
 				
 				//right diagonal check
@@ -152,21 +148,22 @@ public final class TicTacToeBoard implements Board {
 						j--;
 					}
 					//we have a winner in right diagonal, return tile content?
-					if (line) return new SimpleResult(new ArrayList<>(), new ArrayList<>());
+//					if (line) return new SimpleResult(new ArrayList<>(), new ArrayList<>());
 				}
 				
 				//draw check; just see if the board are full; if the board is full and it came to here means that 
 				//it's a draw
-				if (!tiles.containsValue(new TicTacToeEmptyTile())) return new SimpleResult(new ArrayList<>(), new ArrayList<>());
+//				if (!tiles.containsValue(new TicTacToeEmptyTile())) return new SimpleResult(new ArrayList<>(), new ArrayList<>());
 
 				//the game must go on, what i must return? a game result (null result, match not ended, etc), a match status? 
-				return new SimpleResult(new ArrayList<>(), new ArrayList<>());
+//				return new SimpleResult(new ArrayList<>(), new ArrayList<>());
 				
 		}catch (Exception e) {
 			// TODO: handle exception
 			//something bad happened
-			return new SimpleResult(new ArrayList<>(), new ArrayList<>());
+//			return new SimpleResult(new ArrayList<>(), new ArrayList<>());
 		}
+		return null;
 	}
 
 }
