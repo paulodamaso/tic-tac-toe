@@ -2,7 +2,6 @@ package tictactoe;
 
 import game.board.tile.InvalidTile;
 import game.board.tile.Tile;
-import game.board.tile.TileContent;
 
 /**
  * <p> A tile abstraction in a tic tac toe game.
@@ -20,6 +19,9 @@ public interface TicTacToeTile extends Tile {
 	 * @throws Exception if some exception occurs in the operation, for example, if the tile
 	 * is an {@link InvalidTile}.
 	 */
-	public TicTacToeTile put(TileContent content) throws Exception;
+	
+	public TicTacToeTile put(TicTacToeTileContent content) throws Exception;
+	
+	public TicTacToeTileContent content() throws Exception;
 
 }

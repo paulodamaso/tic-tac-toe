@@ -53,7 +53,7 @@ public final class TicTacToeMove implements Move {
 				new TicTacToeMatch(
 						this.match.players().next(), 
 						this.match.players().next(), 
-						this.match.board().add(this.position, new TicTacToeTileContent(this.player))
+						this.match.board().add(this.position, new TicTacToeTileContentImpl(this.player))
 					);
 	}
 

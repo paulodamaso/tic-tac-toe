@@ -26,4 +26,10 @@ public final class TicTacToeEmptyTile implements EmptyTile, TicTacToeTile {
 		return 15;
 	}
 
+	@Override
+	public TicTacToeTileContentImpl content() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -14,14 +14,13 @@ import game.result.Result;
 public interface Match {
 
 	/**
-	 * <p> Add a {@link Move} to a match, creating an ending condition ({@link FinishedMatch})  if
-	 * this move brings the match to an end.
+	 * <p> Add a {@link Move} to a match.
 	 *  
 	 * @param move
 	 * @return the current match as an immutable object
 	 */
 	public default Match move (Move move) throws Exception{
-		return move.perform().check();
+		return move.perform();
 	};
 	
 	/**
@@ -42,26 +41,19 @@ public interface Match {
 	 */
 	public default void play() throws Exception{
 		
-		while(!move(players().next().move()).check().finished()) {
+		while(move(players().next().move()).check().result().partial()) {
 			//keep running while the match is unfinished
+			//e.g., the result is partial
 		}
 	}
 	
 	/**
-	 * <p> Returns the {@link Result} of the match; if the match is not
-	 * finished yet, must return an {@link UnfinishedMatchResult} with the current
-	 * match situation. 
+	 * <p> Returns the {@link Result} of the match.
 	 * 
 	 * @return
 	 */
-	public Result result();
-	
-	/**
-	 * <p> Returns if the {@link Match} is finished or not. A match is finished if it matches
-	 * any of the winning conditions defined in the {@link #check()} method.  
-	 */
-	public default boolean finished() {
-		return false;
+	public default Result result() {
+		return check().result();
 	}
- 
+	
 }

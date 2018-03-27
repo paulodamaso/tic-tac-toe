@@ -58,7 +58,7 @@ public class TicTacToeBoardTest {
 		//add content to a invalid position, must return exception
 		Throwable excep =  null;
 		try {
-			board.add( new BiDimensionalPosition(-1, -1), new TicTacToeTileContent(new SimplePlayer("player1") ));
+			board.add( new BiDimensionalPosition(-1, -1), new TicTacToeTileContentImpl(new SimplePlayer("player1") ));
 		} catch (Exception e) {
 			excep = e;
 		}
@@ -66,9 +66,9 @@ public class TicTacToeBoardTest {
 		
 		
 		//add content to a valid non-empty position, return exception?
-		board.add(new BiDimensionalPosition(0, 0), new TicTacToeTileContent(new SimplePlayer("player1")));
+		board.add(new BiDimensionalPosition(0, 0), new TicTacToeTileContentImpl(new SimplePlayer("player1")));
 		assertThrows(Exception.class, 
-				() -> board.add(new BiDimensionalPosition(0, 0), new TicTacToeTileContent(new SimplePlayer("player"))));
+				() -> board.add(new BiDimensionalPosition(0, 0), new TicTacToeTileContentImpl(new SimplePlayer("player"))));
 		
 	}
 	
@@ -134,9 +134,9 @@ public class TicTacToeBoardTest {
 		// x |   |
 		//x wins, checks who's winner
 		Board board = new TicTacToeBoard(3);
-		board.add(new BiDimensionalPosition(0, 0), new TicTacToeTileContent(player1));
-		board.add(new BiDimensionalPosition(0, 1), new TicTacToeTileContent(player1));
-		board.add(new BiDimensionalPosition(0, 2), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(0, 0), new TicTacToeTileContentImpl(player1));
+		board.add(new BiDimensionalPosition(0, 1), new TicTacToeTileContentImpl(player1));
+		board.add(new BiDimensionalPosition(0, 2), new TicTacToeTileContentImpl(player1));
 		//the winner must be player 1
 		assertEquals(player1, board.check().winners().next());
 		
@@ -145,9 +145,9 @@ public class TicTacToeBoardTest {
 		//   | X |
 		//x wins, checks who's winner
 		board = new TicTacToeBoard(3);
-		board.add(new BiDimensionalPosition(1, 0), new TicTacToeTileContent(player1));
-		board.add(new BiDimensionalPosition(1, 1), new TicTacToeTileContent(player1));
-		board.add(new BiDimensionalPosition(1, 2), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(1, 0), new TicTacToeTileContentImpl(player1));
+		board.add(new BiDimensionalPosition(1, 1), new TicTacToeTileContentImpl(player1));
+		board.add(new BiDimensionalPosition(1, 2), new TicTacToeTileContentImpl(player1));
 		board.check();
 		
 		//   |   | X   
@@ -155,9 +155,9 @@ public class TicTacToeBoardTest {
 		//   |   | X
 		//x wins, checks who's winner
 		board = new TicTacToeBoard(3);
-		board.add(new BiDimensionalPosition(2, 0), new TicTacToeTileContent(player1));
-		board.add(new BiDimensionalPosition(2, 1), new TicTacToeTileContent(player1));
-		board.add(new BiDimensionalPosition(2, 2), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(2, 0), new TicTacToeTileContentImpl(player1));
+		board.add(new BiDimensionalPosition(2, 1), new TicTacToeTileContentImpl(player1));
+		board.add(new BiDimensionalPosition(2, 2), new TicTacToeTileContentImpl(player1));
 		board.check();
 		
 		// x | x | x   
@@ -165,9 +165,9 @@ public class TicTacToeBoardTest {
 		//   |   |
 		//x wins, checks who's winner
 		board = new TicTacToeBoard(3);
-		board.add(new BiDimensionalPosition(0, 0), new TicTacToeTileContent(player1));
-		board.add(new BiDimensionalPosition(1, 0), new TicTacToeTileContent(player1));
-		board.add(new BiDimensionalPosition(2, 0), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(0, 0), new TicTacToeTileContentImpl(player1));
+		board.add(new BiDimensionalPosition(1, 0), new TicTacToeTileContentImpl(player1));
+		board.add(new BiDimensionalPosition(2, 0), new TicTacToeTileContentImpl(player1));
 		board.check();
 		//		assertEquals(player1, board.check().check());
 		
@@ -176,9 +176,9 @@ public class TicTacToeBoardTest {
 		//   |   |
 		//x wins, checks who's winner
 		board = new TicTacToeBoard(3);
-		board.add(new BiDimensionalPosition(0, 1), new TicTacToeTileContent(player1));
-		board.add(new BiDimensionalPosition(1, 1), new TicTacToeTileContent(player1));
-		board.add(new BiDimensionalPosition(2, 1), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(0, 1), new TicTacToeTileContentImpl(player1));
+		board.add(new BiDimensionalPosition(1, 1), new TicTacToeTileContentImpl(player1));
+		board.add(new BiDimensionalPosition(2, 1), new TicTacToeTileContentImpl(player1));
 		board.check();
 		
 		//   |   |    
@@ -186,9 +186,9 @@ public class TicTacToeBoardTest {
 		// X | X | X 
 		//x wins, checks who's winner
 		board = new TicTacToeBoard(3);
-		board.add(new BiDimensionalPosition(0, 2), new TicTacToeTileContent(player1));
-		board.add(new BiDimensionalPosition(1, 2), new TicTacToeTileContent(player1));
-		board.add(new BiDimensionalPosition(2, 2), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(0, 2), new TicTacToeTileContentImpl(player1));
+		board.add(new BiDimensionalPosition(1, 2), new TicTacToeTileContentImpl(player1));
+		board.add(new BiDimensionalPosition(2, 2), new TicTacToeTileContentImpl(player1));
 		board.check();
 		
 		// X |   |    
@@ -196,9 +196,9 @@ public class TicTacToeBoardTest {
 		//   |   | X 
 		//x wins, checks who's winner
 		board = new TicTacToeBoard(3);
-		board.add(new BiDimensionalPosition(0, 0), new TicTacToeTileContent(player1));
-		board.add(new BiDimensionalPosition(1, 1), new TicTacToeTileContent(player1));
-		board.add(new BiDimensionalPosition(2, 2), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(0, 0), new TicTacToeTileContentImpl(player1));
+		board.add(new BiDimensionalPosition(1, 1), new TicTacToeTileContentImpl(player1));
+		board.add(new BiDimensionalPosition(2, 2), new TicTacToeTileContentImpl(player1));
 		board.check();
 		
 		//   |   | X    
@@ -206,9 +206,9 @@ public class TicTacToeBoardTest {
 		// X |   |   
 		//x wins, checks who's winner
 		board = new TicTacToeBoard(3);
-		board.add(new BiDimensionalPosition(0, 2), new TicTacToeTileContent(player1));
-		board.add(new BiDimensionalPosition(1, 1), new TicTacToeTileContent(player1));
-		board.add(new BiDimensionalPosition(2, 0), new TicTacToeTileContent(player1));
+		board.add(new BiDimensionalPosition(0, 2), new TicTacToeTileContentImpl(player1));
+		board.add(new BiDimensionalPosition(1, 1), new TicTacToeTileContentImpl(player1));
+		board.add(new BiDimensionalPosition(2, 0), new TicTacToeTileContentImpl(player1));
 		board.check();
 
 		// X | O | O    
@@ -217,15 +217,15 @@ public class TicTacToeBoardTest {
 		//draw
 		//checks draw (full board, no winner)
 		board = new TicTacToeBoard(3);
-		board.add(new BiDimensionalPosition(0, 0), new TicTacToeTileContent(player1));
-		board.add(new BiDimensionalPosition(0, 1), new TicTacToeTileContent(player2));
-		board.add(new BiDimensionalPosition(0, 2), new TicTacToeTileContent(player2));
-		board.add(new BiDimensionalPosition(1, 0), new TicTacToeTileContent(player2));
-		board.add(new BiDimensionalPosition(1, 1), new TicTacToeTileContent(player1));
-		board.add(new BiDimensionalPosition(1, 2), new TicTacToeTileContent(player1));
-		board.add(new BiDimensionalPosition(2, 0), new TicTacToeTileContent(player1));
-		board.add(new BiDimensionalPosition(2, 1), new TicTacToeTileContent(player1));
-		board.add(new BiDimensionalPosition(2, 2), new TicTacToeTileContent(player2));
+		board.add(new BiDimensionalPosition(0, 0), new TicTacToeTileContentImpl(player1));
+		board.add(new BiDimensionalPosition(0, 1), new TicTacToeTileContentImpl(player2));
+		board.add(new BiDimensionalPosition(0, 2), new TicTacToeTileContentImpl(player2));
+		board.add(new BiDimensionalPosition(1, 0), new TicTacToeTileContentImpl(player2));
+		board.add(new BiDimensionalPosition(1, 1), new TicTacToeTileContentImpl(player1));
+		board.add(new BiDimensionalPosition(1, 2), new TicTacToeTileContentImpl(player1));
+		board.add(new BiDimensionalPosition(2, 0), new TicTacToeTileContentImpl(player1));
+		board.add(new BiDimensionalPosition(2, 1), new TicTacToeTileContentImpl(player1));
+		board.add(new BiDimensionalPosition(2, 2), new TicTacToeTileContentImpl(player2));
 		board.check();
 		
 

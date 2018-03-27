@@ -8,7 +8,7 @@ import game.Players;
  * @author paulodamaso
  *
  */
-public final class WinResult implements Result {
+public final class WinResult implements Finished {
 	
 	private final Players winners;
 	private final Players losers; 

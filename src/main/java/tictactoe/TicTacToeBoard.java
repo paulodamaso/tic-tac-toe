@@ -6,10 +6,13 @@ import java.util.Map;
 
 import game.board.Board;
 import game.board.tile.EmptyTile;
+import game.board.tile.Tile;
 import game.board.tile.TileContent;
 import game.position.BiDimensionalPosition;
 import game.position.Position;
+import game.result.DrawResult;
 import game.result.Result;
+import game.result.WinResult;
 
 /**
  * <p> A tic tac toe game board.
@@ -21,7 +24,7 @@ import game.result.Result;
  */
 public final class TicTacToeBoard implements Board {
 	
-	private final Map<Position, TicTacToeTile> tiles;
+	private final Map<Position, Tile> tiles;
 	
 	public TicTacToeBoard(int size) {
 		this(new HashMap<>(size*size));
@@ -107,53 +110,53 @@ public final class TicTacToeBoard implements Board {
 						j++;
 					}
 					//we have a winner in line i, return tile content?
-//					if (line) return new WinResult(new SimplePlayers(winner), new SimplePlayers(players))
+					if (line) return new WinResult(new TicTacToePlayers(winner), new TicTacToePlayers(winner));
 				}
 				
 				//column check
 				for(int i = 0; i< dimension; i++) {
 					boolean line = true;
 					int j = 0;
-					TileContent winner = this.tile(new BiDimensionalPosition(j, i)).content();
+					TicTacToeTileContentImpl winner = this.tile(new BiDimensionalPosition(j, i)).content();
 					while(line && j < dimension) {
 						line = line && winner.equals(this.tile(new BiDimensionalPosition(j, i)).content());
 						j++;
 					}
 					//we have a winner in column i, return tile content?
-//					if (line) return new SimpleResult(new ArrayList<>(), new ArrayList<>());
+					if (line) return new WinResult(new TicTacToePlayers(winner), new TicTacToePlayers(winner));
 				}
 				
 				//left diagonal check
 				for(int i = 0; i< dimension; i++) {
 					boolean line = true;
 					int j = 0;
-					TileContent winner = this.tile(new BiDimensionalPosition(i, i)).content();
+					TicTacToeTileContentImpl winner = this.tile(new BiDimensionalPosition(i, i)).content();
 					while(line && j < dimension) {
 						if (i == j)
 							line = line && winner.equals(this.tile(new BiDimensionalPosition(j, i)).content());
 						j++;
 					}
 					//we have a winner in left diagonal, return tile content?
-//					if (line) return new SimpleResult(new ArrayList<>(), new ArrayList<>());
+					if (line) return new WinResult(new TicTacToePlayers(winner), new TicTacToePlayers(winner));
 				}
 				
 				//right diagonal check
 				for(int i = dimension-1; i>= 0; i--) {
 					boolean line = true;
 					int j = dimension-1;
-					TileContent winner = this.tile(new BiDimensionalPosition(i, i)).content();
+					TicTacToeTileContentImpl winner = this.tile(new BiDimensionalPosition(i, i)).content();
 					while(line && j >= 0) {
 						if (i == j)
 							line = line && winner.equals(this.tile(new BiDimensionalPosition(j, i)).content());
 						j--;
 					}
 					//we have a winner in right diagonal, return tile content?
-//					if (line) return new SimpleResult(new ArrayList<>(), new ArrayList<>());
+					if (line) return new WinResult(new TicTacToePlayers(winner), new TicTacToePlayers(winner));
 				}
 				
 				//draw check; just see if the board are full; if the board is full and it came to here means that 
 				//it's a draw
-//				if (!tiles.containsValue(new TicTacToeEmptyTile())) return new SimpleResult(new ArrayList<>(), new ArrayList<>());
+				if (!tiles.containsValue(new TicTacToeEmptyTile())) return new DrawResult();
 
 				//the game must go on, what i must return? a game result (null result, match not ended, etc), a match status? 
 //				return new SimpleResult(new ArrayList<>(), new ArrayList<>());

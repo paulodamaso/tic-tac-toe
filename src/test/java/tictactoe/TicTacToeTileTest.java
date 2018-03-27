@@ -29,11 +29,11 @@ public class TicTacToeTileTest {
 		//- invalid tile if this tile is occupied
 		
 		//create a tile already populated
-		TicTacToeTileImp tile = new TicTacToeTileImp(new TicTacToeTileContent(new SimplePlayer("player1")));
+		TicTacToeTileImp tile = new TicTacToeTileImp(new TicTacToeTileContentImpl(new SimplePlayer("player1")));
 		
 		//try to put something in it, throws exception
 		assertThrows(Exception.class, 
-				() -> tile.put(new TicTacToeTileContent(new SimplePlayer("player2"))
+				() -> tile.put(new TicTacToeTileContentImpl(new SimplePlayer("player2"))
 						)
 				);
 	}
@@ -42,12 +42,12 @@ public class TicTacToeTileTest {
 	public void equalsTest() {
 		assertTrue(
 				new TicTacToeTileImp(
-						new TicTacToeTileContent(
+						new TicTacToeTileContentImpl(
 								new SimplePlayer("Paulo")
 								)
 						).equals(
 								new TicTacToeTileImp(
-										new TicTacToeTileContent(
+										new TicTacToeTileContentImpl(
 												new SimplePlayer("Paulo")
 												)
 										)
@@ -55,7 +55,7 @@ public class TicTacToeTileTest {
 				);
 		assertFalse(
 				new TicTacToeTileImp(
-						new TicTacToeTileContent(
+						new TicTacToeTileContentImpl(
 								new SimplePlayer("Paulo")
 								)
 						).equals(

@@ -13,14 +13,14 @@ import game.board.tile.TileContent;
  */
 public final class TicTacToeTileImp implements TicTacToeTile {
 	
-	private final TileContent content;
+	private final TicTacToeTileContentImpl content;
 	
-	public TicTacToeTileImp(TileContent content) {
+	public TicTacToeTileImp(TicTacToeTileContentImpl content) {
 		this.content = content;
 	}
 
 	@Override
-	public TicTacToeTile put(TileContent content) throws Exception {
+	public TicTacToeTile put(TicTacToeTileContentImpl content) throws Exception {
 		//cannot overwrite content in tile; must return invalid tile exception
 		/**
 		 * @todo #3 return an exception indicating that the content of the tile cannot
@@ -31,7 +31,7 @@ public final class TicTacToeTileImp implements TicTacToeTile {
 	}
 
 	@Override
-	public TileContent content() {
+	public TicTacToeTileContentImpl content() {
 		return this.content;
 	}
 	

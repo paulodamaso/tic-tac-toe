@@ -79,7 +79,7 @@ public final class TicTacToeMatch implements Match {
 	public Match check() {
 		try {		
 			// in tic tac toe a match is finished when:
-			// board signal that an ending condition has been reached, return new finished match or normal match
+			// board signal that an ending condition has been reached, return new finished match
 			this.board.check();
 		}catch(Exception e) {
 

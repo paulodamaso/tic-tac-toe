@@ -9,7 +9,7 @@ import game.Players;
  * @author paulodamaso
  *
  */
-public class DrawResult implements Result {
+public class DrawResult implements Finished {
 
 	@Override
 	public Players winners() {

@@ -8,7 +8,7 @@ import game.SimplePlayer;
 import game.board.tile.EmptyTile;
 import tictactoe.TicTacToeEmptyTile;
 import tictactoe.TicTacToeTileImp;
-import tictactoe.TicTacToeTileContent;
+import tictactoe.TicTacToeTileContentImpl;
 
 /**
  * <p> Tests related to {@link EmptyTile} class.
@@ -27,12 +27,12 @@ public class EmptyTileTest {
 		//putting a value in an EmptyTile must return a new tile with content
 		assertEquals(
 				new TicTacToeTileImp(
-						new TicTacToeTileContent(
+						new TicTacToeTileContentImpl(
 								new SimplePlayer("player")
 								)
 						), 
 				new TicTacToeEmptyTile().put(
-						new TicTacToeTileContent(
+						new TicTacToeTileContentImpl(
 								new SimplePlayer("player")
 								)
 						)

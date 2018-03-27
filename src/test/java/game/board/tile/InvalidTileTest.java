@@ -9,7 +9,7 @@ import game.SimplePlayer;
 import game.board.tile.InvalidTile;
 import tictactoe.TicTacToeEmptyTile;
 import tictactoe.TicTacToeTileImp;
-import tictactoe.TicTacToeTileContent;
+import tictactoe.TicTacToeTileContentImpl;
 
 public class InvalidTileTest {
 
@@ -36,7 +36,7 @@ public class InvalidTileTest {
 		Throwable excep =  null;
 		InvalidTile tile = new InvalidTile(new TicTacToeEmptyTile());
 		try {
-			tile.put(new TicTacToeTileContent(new SimplePlayer("player1") ));
+			tile.put(new TicTacToeTileContentImpl(new SimplePlayer("player1") ));
 		} catch (Exception e) {
 			excep = e;
 		}
@@ -52,7 +52,7 @@ public class InvalidTileTest {
 
 		//hashcode test, non-equal objects, must be equal: all invalid tiles are equals (?)
 		tile = new InvalidTile(new TicTacToeEmptyTile());
-		anotherTile = new InvalidTile(new TicTacToeTileImp(new TicTacToeTileContent(new SimplePlayer("player1"))));
+		anotherTile = new InvalidTile(new TicTacToeTileImp(new TicTacToeTileContentImpl(new SimplePlayer("player1"))));
 		assertTrue(tile.hashCode() == anotherTile.hashCode());		
 	}
 
