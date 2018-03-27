@@ -1,8 +1,8 @@
 package tictactoe;
 
-import game.Player;
 import game.match.Match;
 import game.move.Move;
+import game.player.Player;
 import game.position.Position;
 
 /**

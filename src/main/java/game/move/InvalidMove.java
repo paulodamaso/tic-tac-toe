@@ -1,7 +1,7 @@
 package game.move;
 
-import game.Player;
 import game.match.Match;
+import game.player.Player;
 
 /**
  * <p> Decorator for saying that this move is invalid.

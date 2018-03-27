@@ -1,4 +1,4 @@
-package game;
+package game.player;
 
 /**
  * <p> A empty {@link Players} object.

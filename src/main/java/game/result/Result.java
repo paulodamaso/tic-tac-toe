@@ -1,6 +1,6 @@
 package game.result;
 
-import game.Players;
+import game.player.Players;
 
 /**
  * <p> Class representing the result of a match. Hold the winners of the match, 

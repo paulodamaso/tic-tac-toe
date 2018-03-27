@@ -1,7 +1,7 @@
 package game.move;
 
-import game.Player;
 import game.match.Match;
+import game.player.Player;
 
 /**
  * <p> Class representing the move made by a {@link Player}.

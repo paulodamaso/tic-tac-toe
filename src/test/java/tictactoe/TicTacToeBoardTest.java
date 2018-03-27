@@ -8,11 +8,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.Test;
 
-import game.Player;
 import game.SimplePlayer;
 import game.board.Board;
 import game.board.tile.InvalidTile;
 import game.board.tile.Tile;
+import game.player.Player;
 import game.position.BiDimensionalPosition;
 
 /**

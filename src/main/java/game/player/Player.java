@@ -1,4 +1,4 @@
-package game;
+package game.player;
 
 import game.move.Move;
 
@@ -10,7 +10,17 @@ import game.move.Move;
  */
 public interface Player {
 
+	/**
+	 * <p> The player name.
+	 * 
+	 * @return
+	 */
 	public String name();
 	
+	/**
+	 * <p> An move attempt made by the player.
+	 * 
+	 * @return
+	 */
 	public Move move();
 }

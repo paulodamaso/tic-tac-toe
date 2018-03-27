@@ -7,9 +7,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.Test;
 
-import game.Players;
 import game.SimplePlayer;
-import game.SimplePlayers;
+import game.player.Players;
+import game.player.SimplePlayers;
 
 /**
  * <p> Tests related to {@link TicTacToeMatch}.

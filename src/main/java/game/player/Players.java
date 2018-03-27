@@ -1,4 +1,4 @@
-package game;
+package game.player;
 
 import game.match.Match;
 
@@ -11,10 +11,9 @@ import game.match.Match;
 public interface Players {
 
 	/**
-	 * <p> Return the next {@link Player} to play. Iterates the player list
-	 * returning to the start when the end is reached.
+	 * <p> Return the next player to play.
 	 * 
-	 * @return next player
+	 * @return
 	 */
 	public Player next();
 	

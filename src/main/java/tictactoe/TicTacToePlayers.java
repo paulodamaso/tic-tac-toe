@@ -1,7 +1,7 @@
 package tictactoe;
 
-import game.Player;
-import game.Players;
+import game.player.Player;
+import game.player.Players;
 
 public final class TicTacToePlayers implements Players {
 	

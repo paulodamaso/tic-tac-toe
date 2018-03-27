@@ -1,8 +1,8 @@
 package game.match;
 
 import game.Game;
-import game.Players;
 import game.move.Move;
+import game.player.Players;
 import game.result.Result;
 
 /**
@@ -14,12 +14,13 @@ import game.result.Result;
 public interface Match {
 
 	/**
-	 * <p> Add a {@link Move} to a match.
+	 * <p> Add a {@link Move} to a match. The move executes itself (performs) returning a new instance of
+	 * the match, with the changes caused by the move applied.
 	 *  
 	 * @param move
 	 * @return the current match as an immutable object
 	 */
-	public default Match move (Move move) throws Exception{
+	public default Match addMove (Move move) throws Exception{
 		return move.perform();
 	};
 	
@@ -41,7 +42,7 @@ public interface Match {
 	 */
 	public default void play() throws Exception{
 		
-		while(move(players().next().move()).check().result().partial()) {
+		while(addMove(players().next().move()).check().result().partial()) {
 			//keep running while the match is unfinished
 			//e.g., the result is partial
 		}
@@ -52,8 +53,6 @@ public interface Match {
 	 * 
 	 * @return
 	 */
-	public default Result result() {
-		return check().result();
-	}
+	public Result result();
 	
 }

@@ -1,6 +1,6 @@
 package game.result;
 
-import game.Players;
+import game.player.Players;
 
 /**
  * <p> A result in which someone won the game.
