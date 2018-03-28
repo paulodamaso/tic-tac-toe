@@ -1,15 +1,10 @@
-package game.result;
+package oddsandevens.result;
 
 import game.player.NoPlayers;
 import game.player.Players;
+import game.result.Partial;
 
-/**
- * <p> Result created when an match ends in a draw.
- * 
- * @author paulodamaso
- *
- */
-public abstract class DrawResult implements Finished {
+public class OddsAndEvensPartialResult implements Partial, OddsAndEvensResult {
 
 	@Override
 	public Players winners() {

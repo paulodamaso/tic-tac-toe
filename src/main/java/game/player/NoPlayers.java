@@ -17,4 +17,10 @@ public class NoPlayers implements Players {
 		return null;
 	}
 
+	@Override
+	public Player previous() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

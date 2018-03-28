@@ -13,7 +13,7 @@ public interface Result {
 	
 	public Players winners();
 	public Players losers();
-	
+
 	public boolean partial();
 
 }

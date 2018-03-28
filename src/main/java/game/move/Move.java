@@ -4,7 +4,7 @@ import game.match.Match;
 import game.player.Player;
 
 /**
- * <p> Class representing the move made by a {@link Player}.
+ * <p> Class representing the move made by a {@link Player} for a {@link Match}.
  * 
  * @author paulodamaso
  *
@@ -22,6 +22,8 @@ public interface Move {
 	 *  
 	 * @return {@link Match} representing the match state after the move.
 	 */
-	public Match perform() throws Exception;
+	public Match perform() ;
+	
+	public Match match();
 
 }

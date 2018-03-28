@@ -1,6 +1,5 @@
 package game.move;
 
-import game.match.Match;
 import game.player.Player;
 
 /**
@@ -9,7 +8,7 @@ import game.player.Player;
  * @author paulodamaso
  *
  */
-public final class InvalidMove implements Move {
+public abstract class InvalidMove implements Move {
 	
 	private final Move move;
 
@@ -22,9 +21,4 @@ public final class InvalidMove implements Move {
 		return move.player();
 	}
 
-	@Override
-	public Match perform() throws Exception{
-		//this move is invalid and cannot be performed
-		throw new Exception("This move is invalid and cannot be performed!");
-	}
 }

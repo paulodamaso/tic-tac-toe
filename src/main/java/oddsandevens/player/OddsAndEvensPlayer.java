@@ -1,7 +1,7 @@
 package oddsandevens.player;
 
-import game.move.Move;
 import game.player.Player;
+import oddsandevens.move.OddsAndEvensValidMove;
 
 /**
  * <p> A player of the odds and evens game. 
@@ -9,7 +9,7 @@ import game.player.Player;
  * @author paulodamaso
  *
  */
-public final class OddsAndEvensPlayer implements Player {
+public abstract class OddsAndEvensPlayer implements Player {
 	
 	private final String name;
 	private final boolean even;
@@ -27,12 +27,7 @@ public final class OddsAndEvensPlayer implements Player {
 	public boolean even() {
 		return this.even;
 	}
-
+	
 	@Override
-	public Move move() {
-		// how the hell do we move?
-		//return a new OddsAndEvenMove, implemented by a subclass
-		return null;
-	}
-
+	public abstract OddsAndEvensValidMove move();
 }

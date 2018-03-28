@@ -17,12 +17,17 @@ public final class OddsAndEvensPlayers implements Players {
 	private final OddsAndEvensPlayer[] players;
 	private boolean turn = false;
 
-	public OddsAndEvensPlayers(OddsAndEvensPlayer player1, OddsAndEvensPlayer player2) {
-		this.players = new OddsAndEvensPlayer[] {player1, player2}; 
+	public OddsAndEvensPlayers(OddsAndEvensPlayer...player) {
+		this.players = player; 
 	}
 
 	public OddsAndEvensPlayer next() {
 		turn = !turn;
+		return players[(turn ? 0 : 1)];
+	}
+
+	@Override
+	public Player previous() {
 		return players[(turn ? 0 : 1)];
 	}
 }

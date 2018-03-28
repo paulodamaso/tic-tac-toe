@@ -17,4 +17,11 @@ public interface Players {
 	 */
 	public Player next();
 	
+	/**
+	 * <p> Return the last player who played.
+	 * 
+	 * @return
+	 */
+	public Player previous();
+	
 }

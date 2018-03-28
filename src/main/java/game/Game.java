@@ -9,13 +9,13 @@ import game.move.Move;
  * @author paulodamaso
  *
  */
-public interface Game {
+public interface Game<M extends Move> {
 
 	/**
 	 * <p> Create a new game match
 	 * @return
 	 */
-	public Match newMatch();
+	public Match play();
 	
 	/**
 	 * <p> Evaluate a {@link Move} according to game rules.
@@ -23,6 +23,6 @@ public interface Game {
 	 * @param move
 	 * @return
 	 */
-	public Move evaluate(Move move);
+	public Move evaluate(M move);
 	
 }
