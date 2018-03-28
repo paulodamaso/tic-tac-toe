@@ -2,7 +2,7 @@ package tictactoe;
 
 import game.match.Match;
 import game.player.Player;
-import game.player.Players;
+import game.player.MatchPlayers;
 import game.player.SimplePlayers;
 
 /**
@@ -89,7 +89,7 @@ public final class TicTacToeMatch implements Match {
 	}
 
 	@Override
-	public Players players() {
+	public MatchPlayers players() {
 		return new SimplePlayers(new Player[]{this.player1, this.player2}) ;
 	}
 	

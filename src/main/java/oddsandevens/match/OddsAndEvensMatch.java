@@ -59,7 +59,7 @@ public final class OddsAndEvensMatch implements Match {
 						new OddsAndEvensWinResult(new OddsAndEvensPlayers(odds), new OddsAndEvensPlayers(this.evens), numbers.get(this.evens) , numbers.get(this.odds));
 		}
 		else
-			return new OddsAndEvensPartialResult();
+			return new OddsAndEvensPartialResult(this);
 	}
 
 	@Override

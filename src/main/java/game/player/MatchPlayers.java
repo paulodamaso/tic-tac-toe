@@ -8,20 +8,25 @@ import game.match.Match;
  * @author paulodamaso
  *
  */
-public interface Players {
+public interface MatchPlayers {
+	
+	/**
+	 * <p> The match which this players are playing
+	 */
+	public Match match();
 
 	/**
 	 * <p> Return the next player to play.
 	 * 
 	 * @return
 	 */
-	public Player next();
+	public PlayerInMatch next();
 	
 	/**
 	 * <p> Return the last player who played.
 	 * 
 	 * @return
 	 */
-	public Player previous();
+	public PlayerInMatch previous();
 	
 }

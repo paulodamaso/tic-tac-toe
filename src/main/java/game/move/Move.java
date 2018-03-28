@@ -24,6 +24,6 @@ public interface Move {
 	 */
 	public Match perform() ;
 	
-	public Match match();
+//	public Match match();
 
 }

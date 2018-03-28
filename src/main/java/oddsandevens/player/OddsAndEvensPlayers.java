@@ -1,7 +1,7 @@
 package oddsandevens.player;
 
 import game.player.Player;
-import game.player.Players;
+import game.player.MatchPlayers;
 
 /**
  * <p> Odds and even {@link Player} set.
@@ -12,7 +12,7 @@ import game.player.Players;
 /*
  *  @todo #7 make this class immutable
  */
-public final class OddsAndEvensPlayers implements Players {
+public final class OddsAndEvensPlayers implements MatchPlayers {
 	
 	private final OddsAndEvensPlayer[] players;
 	private boolean turn = false;

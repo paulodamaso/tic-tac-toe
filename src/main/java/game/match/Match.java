@@ -1,7 +1,7 @@
 package game.match;
 
 import game.Game;
-import game.player.Players;
+import game.player.MatchPlayers;
 import game.result.Result;
 
 /**
@@ -19,6 +19,6 @@ public interface Match {
 	 */
 	public Result result();
 	
-	public Players players();
+	public MatchPlayers players();
 	
 }

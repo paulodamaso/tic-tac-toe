@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.Test;
 
 import game.SimplePlayer;
-import game.player.Players;
+import game.player.MatchPlayers;
 import game.player.SimplePlayers;
 
 /**
@@ -151,7 +151,7 @@ public class TicTacToeMatchTest {
 		SimplePlayer player2 = new SimplePlayer("player2");
 		TicTacToeMatch match = new TicTacToeMatch(player1, player2, 3);
 		
-		Players players = new SimplePlayers(new SimplePlayer[] {player1, player2} );
+		MatchPlayers players = new SimplePlayers(new SimplePlayer[] {player1, player2} );
 		
 		assertTrue(players.equals(match.players()));
 	}

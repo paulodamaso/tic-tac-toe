@@ -1,9 +1,9 @@
 package tictactoe;
 
 import game.player.Player;
-import game.player.Players;
+import game.player.MatchPlayers;
 
-public final class TicTacToePlayers implements Players {
+public final class TicTacToePlayers implements MatchPlayers {
 	
 	private final Player player;
 	
