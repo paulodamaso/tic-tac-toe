@@ -1,6 +1,8 @@
 package mock;
 
-import game.player.Player;
+import game.match.Match;
+import game.move.Move;
+import game.player.PlayerInMatch;
 
 /**
  * <p> Lousy mock player for testing purposes.
@@ -8,7 +10,7 @@ import game.player.Player;
  * @author paulodamaso
  *
  */
-public final class MockPlayer implements Player {
+public final class MockPlayer implements PlayerInMatch {
 	
 	private final int number;
 	
@@ -44,6 +46,18 @@ public final class MockPlayer implements Player {
 
 	@Override
 	public String name() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Match match() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Move move() {
 		// TODO Auto-generated method stub
 		return null;
 	}

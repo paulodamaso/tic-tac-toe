@@ -25,9 +25,9 @@ public final class OddsAndEvensMatch implements Match {
 	
 	
 	//starting new match
-	public OddsAndEvensMatch(OddsAndEvensPlayer player1, OddsAndEvensPlayer player2) {
-		this.odds = player1;
-		this.evens = player2;
+	public OddsAndEvensMatch(OddsAndEvensPlayer odds, OddsAndEvensPlayer evens) {
+		this.odds = odds;
+		this.evens = evens;
 		this.numbers= new HashMap<>(2);
 	}
 
@@ -39,14 +39,6 @@ public final class OddsAndEvensMatch implements Match {
 		this.numbers.put(move.player(), move.number());
 	}
 	
-	public OddsAndEvensPlayer odds() {
-		return this.odds;
-	}
-	
-	public OddsAndEvensPlayer evens() {
-		return this.evens;
-	}
-	
 	public Map<OddsAndEvensPlayer, Integer> numbers() {
 		return this.numbers;
 	}
@@ -55,8 +47,8 @@ public final class OddsAndEvensMatch implements Match {
 	public OddsAndEvensResult result() {
 		if(numbers.get(this.evens) != null && numbers.get(this.odds) != null) {
 			return (numbers.get(this.evens) + numbers.get(this.odds)) % 2 != 0 ?
-					new OddsAndEvensWinResult(new OddsAndEvensPlayers(this.evens), new OddsAndEvensPlayers(odds), numbers.get(this.evens) , numbers.get(this.odds) ): 
-						new OddsAndEvensWinResult(new OddsAndEvensPlayers(odds), new OddsAndEvensPlayers(this.evens), numbers.get(this.evens) , numbers.get(this.odds));
+					new OddsAndEvensWinResult(new OddsAndEvensPlayers(this.evens), new OddsAndEvensPlayers(this.odds), this.numbers.get(this.evens) , numbers.get(this.odds) ): 
+						new OddsAndEvensWinResult(new OddsAndEvensPlayers(this.odds), new OddsAndEvensPlayers(this.evens), numbers.get(this.evens) , numbers.get(this.odds));
 		}
 		else
 			return new OddsAndEvensPartialResult(this);
@@ -64,8 +56,6 @@ public final class OddsAndEvensMatch implements Match {
 
 	@Override
 	public OddsAndEvensPlayers players() {
-		return new OddsAndEvensPlayers(evens, odds);
+		return new OddsAndEvensPlayers(this.evens, this.odds);
 	}
-	
-
 }

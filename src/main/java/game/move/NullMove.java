@@ -2,7 +2,7 @@ package game.move;
 
 
 import game.match.Match;
-import game.player.Player;
+import game.player.PlayerInMatch;
 
 /**
  * <p> A null move; a move that does not changes the match state.
@@ -10,15 +10,15 @@ import game.player.Player;
 public final class NullMove implements Move {
 
 	private final Match match;
-	private final Player player;	
+	private final PlayerInMatch player;	
 	
-	public NullMove(Match match, Player player) {
+	public NullMove(Match match, PlayerInMatch player) {
 		this.match = match;
 		this.player = player;
 	}
 
 	@Override
-	public Player player() {
+	public PlayerInMatch player() {
 		return this.player;
 	}
 

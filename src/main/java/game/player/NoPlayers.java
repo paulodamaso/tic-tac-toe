@@ -19,12 +19,12 @@ public final class NoPlayers implements MatchPlayers {
 	}
 
 	@Override
-	public PlayerInMatch next() {
+	public NullPlayer next() {
 		return new NullPlayer(this.match);
 	}
 
 	@Override
-	public PlayerInMatch previous() {
+	public NullPlayer previous() {
 		return new NullPlayer(this.match);
 	}
 

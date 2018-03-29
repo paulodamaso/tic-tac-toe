@@ -1,6 +1,5 @@
 package game;
 
-import game.match.Match;
 import game.move.Move;
 
 /**
@@ -11,11 +10,11 @@ import game.move.Move;
  */
 public interface Game<M extends Move> {
 
-	/**
-	 * <p> Create a new game match
-	 * @return
-	 */
-	public Match play();
+//	/**
+//	 * <p> Create a new game match
+//	 * @return
+//	 */
+//	public Match play();
 	
 	/**
 	 * <p> Evaluate a {@link Move} according to game rules.

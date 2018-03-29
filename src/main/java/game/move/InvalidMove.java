@@ -1,6 +1,6 @@
 package game.move;
 
-import game.player.Player;
+import game.player.PlayerInMatch;
 
 /**
  * <p> Decorator for saying that this move is invalid.
@@ -17,7 +17,7 @@ public abstract class InvalidMove implements Move {
 	}
 
 	@Override
-	public Player player() {
+	public PlayerInMatch player() {
 		return move.player();
 	}
 

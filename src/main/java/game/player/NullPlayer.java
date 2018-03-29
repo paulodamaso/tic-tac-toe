@@ -35,4 +35,31 @@ public final class NullPlayer implements PlayerInMatch {
 		//this player does not make moves, returns a null move 
 		return new NullMove(this.match, this);
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((match == null) ? 0 : match.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		NullPlayer other = (NullPlayer) obj;
+		if (match == null) {
+			if (other.match != null)
+				return false;
+		} else if (!match.equals(other.match))
+			return false;
+		return true;
+	}
+
+
 }

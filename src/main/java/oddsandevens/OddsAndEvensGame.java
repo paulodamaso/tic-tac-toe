@@ -22,15 +22,15 @@ public class OddsAndEvensGame implements Game<OddsAndEvensMove> {
 				new OddsAndEvensComputerPlayer("Player Two", false, this.match));
 	}
 
-	@Override
-	public OddsAndEvensMatch play() {
-		OddsAndEvensMatch match = null;
-		do {
-			match = evaluate(this.match.players().next().move()).perform();
-		}while(match.result().partial()) ;
-
-		return match;
-	}
+//	@Override
+//	public OddsAndEvensMatch play() {
+//		OddsAndEvensMatch match = null;
+//		do {
+//			match = evaluate(this.match.players().next().move()).perform();
+//		}while(match.result().partial()) ;
+//
+//		return match;
+//	}
 	
 	@Override
 	public OddsAndEvensMove evaluate(OddsAndEvensMove move) {

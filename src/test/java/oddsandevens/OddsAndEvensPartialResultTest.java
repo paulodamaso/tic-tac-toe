@@ -1,5 +1,6 @@
 package oddsandevens;
 
+import mock.MockMatch;
 import oddsandevens.match.OddsAndEvensMatch;
 import oddsandevens.player.OddsAndEvensComputerPlayer;
 import oddsandevens.result.OddsAndEvensPartialResult;
@@ -24,8 +25,8 @@ public class OddsAndEvensPartialResultTest {
 		//an OddsAndEvensPartialResultTest must return NoPlayers as winners because it does not
 		//have partial state;
 		OddsAndEvensMatch match = new OddsAndEvensMatch(
-				new OddsAndEvensComputerPlayer("Player one", true, match),
-				new OddsAndEvensComputerPlayer("Player two", true, match));
+				new OddsAndEvensComputerPlayer("Player one", true, new MockMatch()),
+				new OddsAndEvensComputerPlayer("Player two", true, new MockMatch));
 		OddsAndEvensPartialResult oepr = new OddsAndEvensPartialResult(match);
 		
 		

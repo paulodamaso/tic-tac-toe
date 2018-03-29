@@ -1,6 +1,7 @@
 package game.player;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import org.junit.Test;
 
@@ -27,6 +28,23 @@ public class NullPlayerTest {
 		NullPlayer np = new NullPlayer(mock);
 		
 		assertEquals(new NullMove(mock, np), np.move());
+	}
+	
+	@Test
+	public void nameTest() {
+		//null playermust return the stored match 
+		Match mock = new MockMatch();
+		NullPlayer np = new NullPlayer(mock);
+		
+		assertNull(np.name());		
+	}
+	
+	@Test
+	public void matchTest() {
+		//null player must return the match it
+		Match mock = new MockMatch();
+		NullPlayer np = new NullPlayer(mock);
+		assertEquals(new MockMatch(), np.match());
 	}
 
 }
