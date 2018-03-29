@@ -4,8 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 import game.match.Match;
+import game.player.Player;
 import oddsandevens.move.OddsAndEvensValidMove;
-import oddsandevens.player.OddsAndEvensPlayer;
+import oddsandevens.player.BaseOddsAndEvensPlayer;
+import oddsandevens.player.OddsAndEvensGamePlayer;
+import oddsandevens.player.OddsAndEvensMatchPlayer;
 import oddsandevens.player.OddsAndEvensPlayers;
 import oddsandevens.result.OddsAndEvensPartialResult;
 import oddsandevens.result.OddsAndEvensResult;
@@ -19,15 +22,14 @@ import oddsandevens.result.OddsAndEvensWinResult;
  */
 public final class OddsAndEvensMatch implements Match {
 
-	private final OddsAndEvensPlayer odds;
-	private final OddsAndEvensPlayer evens;
-	private final Map<OddsAndEvensPlayer, Integer> numbers;
-	
-	
+	private final OddsAndEvensMatchPlayer odds;
+	private final OddsAndEvensMatchPlayer evens;
+	private final Map<BaseOddsAndEvensPlayer, Integer> numbers;
+
 	//starting new match
-	public OddsAndEvensMatch(OddsAndEvensPlayer odds, OddsAndEvensPlayer evens) {
-		this.odds = odds;
-		this.evens = evens;
+	public OddsAndEvensMatch(OddsAndEvensGamePlayer odds, OddsAndEvensGamePlayer evens) {
+		this.odds = new OddsAndEvensMatchPlayer(odds, false, this);
+		this.evens = new OddsAndEvensMatchPlayer(evens, false, this);
 		this.numbers= new HashMap<>(2);
 	}
 
@@ -39,7 +41,7 @@ public final class OddsAndEvensMatch implements Match {
 		this.numbers.put(move.player(), move.number());
 	}
 	
-	public Map<OddsAndEvensPlayer, Integer> numbers() {
+	public Map<BaseOddsAndEvensPlayer, Integer> numbers() {
 		return this.numbers;
 	}
 

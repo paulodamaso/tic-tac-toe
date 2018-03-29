@@ -9,11 +9,6 @@ import game.match.Match;
  *
  */
 public interface MatchPlayers {
-	
-	/**
-	 * <p> The match which this players are playing
-	 */
-	public Match match();
 
 	/**
 	 * <p> Return the next player to play.

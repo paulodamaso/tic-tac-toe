@@ -67,14 +67,44 @@ public class NullMoveTest {
 	
 	@Test
 	public void testPlayer() {
+		//the player of a null move must be the player passed to it in its constructor
 		NullMove move = new NullMove(new MockMatch(), new MockPlayer());
 		assertEquals(new MockPlayer(), move.player());
 	}
 	
 	@Test
 	public void testPerform() {
+		//the perform method of a null move must return its own match, with no changes 
 		NullMove move = new NullMove(new MockMatch(), new MockPlayer());
 		assertEquals(new MockMatch(), move.perform());
+	}
+	
+	@Test
+	//just for 100% coverage
+	public void hashCodeTest () {
+		NullMove np = new NullMove(null, null);
+		//move with both parameters null
+		assertEquals(961, np.hashCode());
+
+		//move with player null
+		np = new NullMove(new MockMatch(), null);
+		assertEquals(1922, np.hashCode());
+		
+		//move with match null
+		np = new NullMove(null, new MockPlayer());
+		assertEquals(992, np.hashCode());
+		
+		//move with the two parameter populated
+		np = new NullMove(new MockMatch(), new MockPlayer());
+		assertEquals(1953, np.hashCode());		
+		
+	}
+	
+	@Test
+	public void matchTest() {
+		NullMove nm = new NullMove(new MockMatch(14), new MockPlayer());
+		assertEquals(new MockMatch(14), nm.match());
+		
 	}
 
 }

@@ -2,7 +2,7 @@ package oddsandevens.move;
 
 import game.move.Move;
 import oddsandevens.match.OddsAndEvensMatch;
-import oddsandevens.player.OddsAndEvensPlayer;
+import oddsandevens.player.BaseOddsAndEvensPlayer;
 
 /**
  * <p> A {@link Move} for the odds and evens game.
@@ -13,17 +13,17 @@ import oddsandevens.player.OddsAndEvensPlayer;
 public final class OddsAndEvensValidMove implements OddsAndEvensMove {
 	
 	private final Integer number;
-	private final OddsAndEvensPlayer player;
+	private final BaseOddsAndEvensPlayer player;
 	private final OddsAndEvensMatch match;
 
-	public OddsAndEvensValidMove(Integer number, OddsAndEvensPlayer player, OddsAndEvensMatch match) {
+	public OddsAndEvensValidMove(Integer number, BaseOddsAndEvensPlayer player, OddsAndEvensMatch match) {
 		this.number = number;
 		this.player = player;
 		this.match = match;
 	}
 
 	@Override
-	public OddsAndEvensPlayer player() {
+	public BaseOddsAndEvensPlayer player() {
 		return this.player;
 	}
 

@@ -30,4 +30,8 @@ public final class MockMove implements Move {
 		return null;
 	}
 
+	@Override
+	public Match match() {
+		return player.match();
+	}
 }

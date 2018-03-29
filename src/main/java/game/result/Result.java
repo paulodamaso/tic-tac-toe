@@ -36,7 +36,7 @@ public interface Result {
 	/**
 	 * <p>  Defines if this result is a partial result of the match (the match has not ended yet) or definitive (the match has already ended).
 	 * 
-	 * @return 
+	 * @return <code>true</code> if the game has not ended yet; <code>false</code> if it has already ended
 	 */
 	public boolean partial();
 }

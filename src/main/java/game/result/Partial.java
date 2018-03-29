@@ -11,6 +11,9 @@ package game.result;
  */
 public interface Partial extends Result {
 
+	/* (non-Javadoc)
+	 * @see game.result.Result#partial()
+	 */
 	@Override
 	public default boolean partial() {
 		return true;

@@ -2,7 +2,7 @@ package oddsandevens.move;
 
 import game.move.InvalidMove;
 import oddsandevens.match.OddsAndEvensMatch;
-import oddsandevens.player.OddsAndEvensPlayer;
+import oddsandevens.player.BaseOddsAndEvensPlayer;
 
 public final class OddsAndEvensInvalidMove extends InvalidMove implements OddsAndEvensMove {
 	
@@ -14,7 +14,7 @@ public final class OddsAndEvensInvalidMove extends InvalidMove implements OddsAn
 	}
 	
 	@Override
-	public OddsAndEvensPlayer player() {
+	public BaseOddsAndEvensPlayer player() {
 		return move.player();
 	}
 

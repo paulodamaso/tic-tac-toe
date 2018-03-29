@@ -1,5 +1,7 @@
 package game.match;
 
+import java.util.Collection;
+
 import game.Game;
 import game.player.MatchPlayers;
 import game.result.Result;
@@ -19,6 +21,10 @@ public interface Match {
 	 */
 	public Result result();
 	
+	/**
+	 * <p> {@link Collection} of players playing the match.
+	 * @return
+	 */
 	public MatchPlayers players();
 	
 }

@@ -52,8 +52,7 @@ public final class MockPlayer implements PlayerInMatch {
 
 	@Override
 	public Match match() {
-		// TODO Auto-generated method stub
-		return null;
+		return new MockMatch(number);
 	}
 
 	@Override

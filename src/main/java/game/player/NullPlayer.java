@@ -5,7 +5,7 @@ import game.move.Move;
 import game.move.NullMove;
 
 /**
- * <p> A representation of a null player, a player with null content.
+ * <p> A representation of a null player, a player with null content, in a match.
  * 
  * <p> Null players return a {@link NullMove} when they try to create a move in a match. 
  * 

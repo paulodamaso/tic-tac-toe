@@ -8,6 +8,9 @@ package game.result;
  */
 public interface Definitive extends Result {
 
+	/* (non-Javadoc)
+	 * @see game.result.Result#partial()
+	 */
 	@Override
 	default boolean partial() {
 		return false;

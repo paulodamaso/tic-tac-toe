@@ -28,9 +28,4 @@ public final class NoPlayers implements MatchPlayers {
 		return new NullPlayer(this.match);
 	}
 
-	@Override
-	public Match match() {
-		return this.match;
-	}
-
 }

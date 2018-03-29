@@ -2,10 +2,16 @@ package game.move;
 
 
 import game.match.Match;
+import game.player.NullPlayer;
 import game.player.PlayerInMatch;
 
 /**
- * <p> A null move; a move that does not changes the match state.
+ * <p> A null move; a move object representing move that is empty and that does not changes the match state.
+ * 
+ * <p> Null moves are empty moves that does not change the match they belong. They are made by a {@link PlayerInMatch}
+ * over a {@link Match} and are created by {@link NullPlayer}s, representing its inability to create moves.
+ * 
+ * @author paulodamaso
  */
 public final class NullMove implements Move {
 
@@ -17,13 +23,18 @@ public final class NullMove implements Move {
 		this.player = player;
 	}
 
+	/* (non-Javadoc)
+	 * @see game.move.Move#player()
+	 */
 	@Override
 	public PlayerInMatch player() {
 		return this.player;
 	}
 
 	/**
-	 * <p> Returns the same match because a null move does not changes the match state.
+	 * <p> Returns the same match because a null move does not changes the match state ( @see Move#perform()).
+	 * 
+	 * @return the match of the move
 	 */
 	@Override
 	public Match perform() {
@@ -59,5 +70,10 @@ public final class NullMove implements Move {
 		} else if (!player.equals(other.player))
 			return false;
 		return true;
+	}
+
+	@Override
+	public Match match() {
+		return this.match;
 	}	
 }

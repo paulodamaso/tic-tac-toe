@@ -4,10 +4,10 @@ import game.match.Match;
 import game.player.Player;
 import oddsandevens.move.OddsAndEvensValidMove;
 
-public class OddsAndEvensConsolePlayer extends OddsAndEvensPlayer {
+public class OddsAndEvensConsolePlayer extends BaseOddsAndEvensPlayer {
 
 	public OddsAndEvensConsolePlayer(Player player, boolean even, Match match) {
-		super(player, even, match);
+//		super(player, even, match);
 		// TODO Auto-generated constructor stub
 	}
 

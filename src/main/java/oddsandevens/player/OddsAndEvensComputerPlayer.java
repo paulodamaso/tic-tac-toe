@@ -11,11 +11,9 @@ import oddsandevens.move.OddsAndEvensValidMove;
  * @author paulodamaso
  *
  */
-public final class OddsAndEvensComputerPlayer extends OddsAndEvensPlayer {
+public final class OddsAndEvensComputerPlayer extends BaseOddsAndEvensPlayer {
 	
-	private final OddsAndEvensMatch match;
-	
-	public OddsAndEvensComputerPlayer(String name, boolean even, OddsAndEvensMatch match) {
+	public OddsAndEvensComputerPlayer(OddsAndEvensGamePlayer player, OddsAndEvensMatch match) {
 		super(name, even);
 		this.match = match;
 	}

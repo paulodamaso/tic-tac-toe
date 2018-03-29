@@ -1,40 +1,30 @@
 package oddsandevens;
 
 import game.Game;
-import oddsandevens.match.OddsAndEvensMatch;
+import game.move.InvalidMove;
 import oddsandevens.move.OddsAndEvensInvalidMove;
 import oddsandevens.move.OddsAndEvensMove;
-import oddsandevens.player.OddsAndEvensComputerPlayer;
 
 /**
- * <p> A wrapper for a {@link OddsAndEvensMatch}
+ * <p> A odds and evens game. This game models the rules of odds and evens moves.
+ * 
+ * <p> Evaluating a move: the odds and evens game has the following rule for a move:
+ * <ul>
+ * 	<li>the value of a move must be between 0 and 5 (at least for humans players playing with just one hand) </li>
+ * </ul>
+ * Anything different from this move must be considered an {@link InvalidMove}.  
  * 
  * @author paulodamaso
  *
  */
 public class OddsAndEvensGame implements Game<OddsAndEvensMove> {
 	
-	private OddsAndEvensMatch match;
-	
-	public OddsAndEvensGame() {
-		this.match = new OddsAndEvensMatch(
-				new OddsAndEvensComputerPlayer("Player One", true, this.match),
-				new OddsAndEvensComputerPlayer("Player Two", false, this.match));
-	}
-
-//	@Override
-//	public OddsAndEvensMatch play() {
-//		OddsAndEvensMatch match = null;
-//		do {
-//			match = evaluate(this.match.players().next().move()).perform();
-//		}while(match.result().partial()) ;
-//
-//		return match;
-//	}
-	
+	/**
+	 * <p> Evaluation of a {@link OddsAndEvensMove} implementation, according to the ru
+	 */
 	@Override
 	public OddsAndEvensMove evaluate(OddsAndEvensMove move) {
-		if (move.number() >= 0 && move.number() <= 5) return move;
+		if (move.number().intValue() >= 0 && move.number().intValue() <= 5) return move;
 		return new OddsAndEvensInvalidMove(move);
 	}
 
