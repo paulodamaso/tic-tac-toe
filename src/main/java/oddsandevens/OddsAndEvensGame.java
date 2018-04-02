@@ -4,6 +4,7 @@ import game.Game;
 import game.move.InvalidMove;
 import oddsandevens.move.OddsAndEvensInvalidMove;
 import oddsandevens.move.OddsAndEvensMove;
+import oddsandevens.move.OddsAndEvensValidMove;
 
 /**
  * <p> A odds and evens game. This game models the rules of odds and evens moves.
@@ -17,12 +18,13 @@ import oddsandevens.move.OddsAndEvensMove;
  * @author paulodamaso
  *
  */
-public class OddsAndEvensGame implements Game<OddsAndEvensMove> {
+public final class OddsAndEvensGame implements Game<OddsAndEvensMove> {
 	
 	/**
-	 * <p> Evaluation of a {@link OddsAndEvensMove} implementation, according to the ru
+	 * <p> Evaluation of a {@link OddsAndEvensMove} implementation
+	 * 
+	 * @return evaluated {@link OddsAndEvensMove}: {@link OddsAndEvensValidMove} or {@link OddsAndEvensInvalidMove}
 	 */
-	@Override
 	public OddsAndEvensMove evaluate(OddsAndEvensMove move) {
 		if (move.number().intValue() >= 0 && move.number().intValue() <= 5) return move;
 		return new OddsAndEvensInvalidMove(move);

@@ -1,37 +1,39 @@
 package oddsandevens.player;
 
-import game.move.Mover;
+import game.move.generator.MoveGenerator;
 import game.player.GamePlayer;
-import game.player.Player;
-import oddsandevens.OddsAndEvensGame;
+import oddsandevens.move.generator.OddsAndEvensMoveGenerator;
 
 /**
- * <p> Interface for modeling an {@link Player} of an {@link OddsAndEvensGame}.
+ * <p> Player with a {@link MoveGenerator} for odds and evens.
  * 
- * <p> Narrow the return type of  {@link #move()} to comply with specific odds and evens 
- * game and match needs This player is not tied to a specific match
- *  
  * @author paulodamaso
  *
  */
-public final class OddsAndEvensGamePlayer implements GamePlayer {
-
-	private final Player player;
-	private final Mover mover;
+public final class OddsAndEvensGamePlayer implements GamePlayer<OddsAndEvensPlayerInMatch> {
 	
-	public OddsAndEvensGamePlayer(Player player, Mover mover) {
-		this.player = player;
-		this.mover = mover;
+	private final String name;
+	private final OddsAndEvensMoveGenerator generator;
+	
+	public OddsAndEvensGamePlayer(String name, OddsAndEvensMoveGenerator generator) {
+		this.name = name;
+		this.generator = generator;
 	}
 
 	@Override
 	public String name() {
-		return this.player.name();
+		return this.name;
 	}
 
 	@Override
-	public Mover mover() {
-		return mover;
+	public OddsAndEvensMoveGenerator generator() {
+		return this.generator;
 	}
+
+//	@Override
+//	public MoveGenerator<Player> generator() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 }

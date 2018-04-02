@@ -72,8 +72,8 @@ public final class NullMove implements Move {
 		return true;
 	}
 
-	@Override
-	public Match match() {
-		return this.match;
-	}	
+//	@Override
+//	public Match match() {
+//		return this.player.match();
+//	}	
 }

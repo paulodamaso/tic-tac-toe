@@ -4,11 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import game.match.Match;
-import game.player.Player;
 import oddsandevens.move.OddsAndEvensValidMove;
-import oddsandevens.player.BaseOddsAndEvensPlayer;
 import oddsandevens.player.OddsAndEvensGamePlayer;
-import oddsandevens.player.OddsAndEvensMatchPlayer;
+import oddsandevens.player.OddsAndEvensPlayerInMatch;
 import oddsandevens.player.OddsAndEvensPlayers;
 import oddsandevens.result.OddsAndEvensPartialResult;
 import oddsandevens.result.OddsAndEvensResult;
@@ -22,18 +20,20 @@ import oddsandevens.result.OddsAndEvensWinResult;
  */
 public final class OddsAndEvensMatch implements Match {
 
-	private final OddsAndEvensMatchPlayer odds;
-	private final OddsAndEvensMatchPlayer evens;
-	private final Map<BaseOddsAndEvensPlayer, Integer> numbers;
+	private final OddsAndEvensPlayerInMatch odds;
+	private final OddsAndEvensPlayerInMatch evens;
+	private final OddsAndEvensPlayers players;
+	private final Map<OddsAndEvensPlayerInMatch, Integer> numbers;
 
 	//starting new match
 	public OddsAndEvensMatch(OddsAndEvensGamePlayer odds, OddsAndEvensGamePlayer evens) {
-		this.odds = new OddsAndEvensMatchPlayer(odds, false, this);
-		this.evens = new OddsAndEvensMatchPlayer(evens, false, this);
+		this.players = new OddsAndEvensPlayers(odds, evens);
+		this.odds = new OddsAndEvensPlayerInMatch(odds, this);
+		this.evens = new OddsAndEvensPlayerInMatch(evens, this);
 		this.numbers= new HashMap<>(2);
 	}
 
-	//created after some move
+	//created after some valid move
 	public OddsAndEvensMatch(OddsAndEvensMatch match, OddsAndEvensValidMove move ) {
 		this.odds = match.odds;
 		this.evens = match.evens;
@@ -41,7 +41,7 @@ public final class OddsAndEvensMatch implements Match {
 		this.numbers.put(move.player(), move.number());
 	}
 	
-	public Map<BaseOddsAndEvensPlayer, Integer> numbers() {
+	public Map<OddsAndEvensPlayerInMatch, Integer> numbers() {
 		return this.numbers;
 	}
 
@@ -56,8 +56,4 @@ public final class OddsAndEvensMatch implements Match {
 			return new OddsAndEvensPartialResult(this);
 	}
 
-	@Override
-	public OddsAndEvensPlayers players() {
-		return new OddsAndEvensPlayers(this.evens, this.odds);
-	}
 }

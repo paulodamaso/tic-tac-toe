@@ -33,10 +33,10 @@ public abstract class InvalidMove implements Move {
 		return origin.player().match();
 	}
 
-	@Override
-	public Match match() {
-		return origin.player().match();
-	}
+//	@Override
+//	public Match match() {
+//		return origin.player().match();
+//	}
 	
 	
 

@@ -3,7 +3,7 @@ package oddsandevens.move;
 import game.Game;
 import game.move.Move;
 import oddsandevens.match.OddsAndEvensMatch;
-import oddsandevens.player.BaseOddsAndEvensPlayer;
+import oddsandevens.player.OddsAndEvensPlayerInMatch;
 
 /**
  * <p> An {@link Move} before being evaluated by the {@link Game} instance.
@@ -13,35 +13,27 @@ import oddsandevens.player.BaseOddsAndEvensPlayer;
  */
 public final class OddsAndEvensUnevaluatedMove implements OddsAndEvensMove{
 	
-	private final BaseOddsAndEvensPlayer player;
+	private final OddsAndEvensPlayerInMatch player;
 	private final Integer number;
 	
-	public OddsAndEvensUnevaluatedMove(BaseOddsAndEvensPlayer player, Integer number) {
+	public OddsAndEvensUnevaluatedMove(OddsAndEvensPlayerInMatch player, Integer number) {
 		this.player = player;
 		this.number = number;
 	}
 
 	@Override
-	public OddsAndEvensMatch match() {
-		return player.match();
-	}
-
-	@Override
-	public BaseOddsAndEvensPlayer player() {
-		// TODO Auto-generated method stub
-		return null;
+	public OddsAndEvensPlayerInMatch player() {
+		return this.player;
 	}
 
 	@Override
 	public OddsAndEvensMatch perform() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.player.match();
 	}
 
 	@Override
 	public Integer number() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.number;
 	}
 
 }

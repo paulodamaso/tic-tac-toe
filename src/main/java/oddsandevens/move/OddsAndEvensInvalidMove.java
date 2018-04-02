@@ -2,7 +2,7 @@ package oddsandevens.move;
 
 import game.move.InvalidMove;
 import oddsandevens.match.OddsAndEvensMatch;
-import oddsandevens.player.BaseOddsAndEvensPlayer;
+import oddsandevens.player.OddsAndEvensPlayerInMatch;
 
 public final class OddsAndEvensInvalidMove extends InvalidMove implements OddsAndEvensMove {
 	
@@ -14,7 +14,7 @@ public final class OddsAndEvensInvalidMove extends InvalidMove implements OddsAn
 	}
 	
 	@Override
-	public BaseOddsAndEvensPlayer player() {
+	public OddsAndEvensPlayerInMatch player() {
 		return move.player();
 	}
 
@@ -22,18 +22,18 @@ public final class OddsAndEvensInvalidMove extends InvalidMove implements OddsAn
 	public OddsAndEvensMatch perform() {
 		//this move is invalid and cannot be performed
 //		throw new Exception("This move is invalid and cannot be performed!");
-		return new OddsAndEvensMatch(move.match(), move.player().move());
+		//what it should do? call another move for the player oven and over?	
+		return this.move.player().match();
 	}
 
-	@Override
-	public OddsAndEvensMatch match() {
-		return move.match();
-	}
+//	@Override
+//	public OddsAndEvensMatch match() {
+//		return move.match();
+//	}
 
 	@Override
 	public Integer number() {
-		// TODO Auto-generated method stub
-		return null;
+		return move.number();
 	}
 	
 

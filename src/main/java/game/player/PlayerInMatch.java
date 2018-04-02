@@ -9,7 +9,7 @@ import game.move.Move;
  * @author paulodamaso
  *
  */
-public interface PlayerInMatch extends GamePlayer {
+public interface PlayerInMatch extends Player {
 	
 	/**
 	 * <p> The match this player is assigned or playing. 

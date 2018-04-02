@@ -2,7 +2,7 @@ package oddsandevens.move;
 
 import game.move.Move;
 import oddsandevens.match.OddsAndEvensMatch;
-import oddsandevens.player.BaseOddsAndEvensPlayer;
+import oddsandevens.player.OddsAndEvensPlayerInMatch;
 
 /**
  * <p> Interface for {@link Move} of a odds and evens game.
@@ -18,11 +18,11 @@ import oddsandevens.player.BaseOddsAndEvensPlayer;
 public interface OddsAndEvensMove extends Move {
 	
 	@Override
-	public BaseOddsAndEvensPlayer player();
+	public OddsAndEvensPlayerInMatch player();
 	
 	@Override
 	public OddsAndEvensMatch perform();
 
-	public abstract Integer number() ;
+	public abstract Integer number();
 	
 }

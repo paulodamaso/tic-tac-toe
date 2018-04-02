@@ -25,11 +25,11 @@ public interface Move {
 	 */
 	public Match perform() ;
 	
-	/**
-	 * <p> Return the {@link Match}
-	 * 
-	 * 
-	 */
-	public Match match();
+//	/**
+//	 * <p> Return the {@link Match}
+//	 * 
+//	 * 
+//	 */
+//	public Match match();
 
 }
