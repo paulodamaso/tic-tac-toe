@@ -34,5 +34,4 @@ public final class OddsAndEvensValidMove implements OddsAndEvensMove {
 	public Integer number() {
 		return this.number;
 	}
-
 }

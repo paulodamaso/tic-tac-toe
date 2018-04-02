@@ -30,12 +30,4 @@ public class NoPlayerTests {
 		
 		assertEquals(new NullPlayer(mock), np.previous());
 	}
-	
-	@Test
-	public void matchTest() {
-		Match mock = new MockMatch();
-		NoPlayers np = new NoPlayers(mock);
-		
-		assertEquals(mock, np.match());
-	}
 }

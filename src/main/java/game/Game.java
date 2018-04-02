@@ -8,7 +8,7 @@ import game.move.Move;
  * @author paulodamaso
  *
  */
-public interface Game<M extends Move> {
+public interface Game {
 
 //	/**
 //	 * <p> Create a new game match
@@ -22,6 +22,6 @@ public interface Game<M extends Move> {
 	 * @param move
 	 * @return
 	 */
-	public Move evaluate(M move);
+	public Move evaluate(Move move);
 	
 }

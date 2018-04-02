@@ -1,9 +1,6 @@
 package game.match;
 
-import java.util.Collection;
-
 import game.Game;
-import game.move.Move;
 import game.player.MatchPlayers;
 import game.result.Result;
 
@@ -25,16 +22,20 @@ public interface Match {
 	public default void start() {
 		Result res = null;
 		do {
-			res = game().evaluate(players().next().move()).perform().result();
+			res = players().next().move().evaluate().perform().result();
 		}while (res.partial());
 	}
 	
 	/**
-	 * <p> {@link Collection} of players playing the match.
+	 * <p> Collection of players playing the match.
 	 * @return
 	 */
 	public MatchPlayers players();
 	
-	public Game<Move> game();
+	/**
+	 * <p> Game of 
+	 * @return
+	 */
+	public Game game();
 	
 }

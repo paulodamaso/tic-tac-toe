@@ -2,6 +2,7 @@ package game.player;
 
 import game.match.Match;
 import game.move.Move;
+import game.move.UnevaluatedMove;
 
 /**
  * <p> A player assigned to a {@link Match}
@@ -22,5 +23,5 @@ public interface PlayerInMatch extends Player {
 	 * 
 	 * @return
 	 */
-	public Move move();
+	public UnevaluatedMove move();
 }

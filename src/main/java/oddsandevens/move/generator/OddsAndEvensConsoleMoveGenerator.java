@@ -3,7 +3,7 @@ package oddsandevens.move.generator;
 import java.util.Scanner;
 
 import oddsandevens.move.OddsAndEvensMove;
-import oddsandevens.move.OddsAndEvensUnevaluatedMove;
+import oddsandevens.move.OddsAndEvensValidMove;
 import oddsandevens.player.OddsAndEvensPlayerInMatch;
 
 public class OddsAndEvensConsoleMoveGenerator implements OddsAndEvensMoveGenerator {
@@ -15,7 +15,7 @@ public class OddsAndEvensConsoleMoveGenerator implements OddsAndEvensMoveGenerat
 		int number = scan.nextInt();
 		scan.close();
 		
-		return new OddsAndEvensUnevaluatedMove(player, new Integer(number));
+		return new OddsAndEvensValidMove(player, new Integer(number));
 	}
 
 }

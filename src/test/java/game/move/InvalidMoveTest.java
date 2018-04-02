@@ -27,13 +27,6 @@ public class InvalidMoveTest {
 	}
 	
 	@Test
-	public void matchTest() {
-		InvalidMove nm = new MockInvalidMove(new MockMove(new MockPlayer(700)));
-		assertEquals(new MockMatch(700), nm.match());
-		
-	}
-	
-	@Test
 	public void testPerform() {
 		//the perform method of a invalid move must return its own match, with no changes 
 		InvalidMove move = new MockInvalidMove(new MockMove(new MockPlayer(100)));

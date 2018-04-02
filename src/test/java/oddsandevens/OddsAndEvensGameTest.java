@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import mock.MockPlayer;
 import oddsandevens.move.OddsAndEvensMove;
-import oddsandevens.move.OddsAndEvensUnevaluatedMove;
+import oddsandevens.move.OddsAndEvensValidMove;
 
 /**
  * <p> Test for {@link OddsAndEvensGame} class.
@@ -28,7 +28,8 @@ public class OddsAndEvensGameTest {
 		// - number less than zero returns an invalid move
 		// - number more than five returns an invalid move
 		// - any other returns an valid move with the number sent
-		OddsAndEvensMove um = new OddsAndEvensUnevaluatedMove(new MockPlayer(), new Integer (7)); 
+		OddsAndEvensMove um = new OddsAndEvensValidMove(new MockPlayer(), new Integer (7));
+		
 	}
 
 }

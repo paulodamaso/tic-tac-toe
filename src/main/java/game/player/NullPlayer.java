@@ -1,8 +1,8 @@
 package game.player;
 
 import game.match.Match;
-import game.move.Move;
 import game.move.NullMove;
+import game.move.UnevaluatedMove;
 
 /**
  * <p> A representation of a null player, a player with null content, in a match.
@@ -31,7 +31,7 @@ public final class NullPlayer implements PlayerInMatch {
 	}
 
 	@Override
-	public Move move() {
+	public UnevaluatedMove move() {
 		//this player does not make moves, returns a null move 
 		return new NullMove(this.match, this);
 	}

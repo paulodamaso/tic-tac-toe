@@ -29,9 +29,4 @@ public final class MockMove implements Move {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public Match match() {
-		return player.match();
-	}
 }

@@ -2,9 +2,9 @@ package oddsandevens;
 
 import game.Game;
 import game.move.InvalidMove;
+import game.move.Move;
 import oddsandevens.move.OddsAndEvensInvalidMove;
 import oddsandevens.move.OddsAndEvensMove;
-import oddsandevens.move.OddsAndEvensValidMove;
 
 /**
  * <p> A odds and evens game. This game models the rules of odds and evens moves.
@@ -18,16 +18,18 @@ import oddsandevens.move.OddsAndEvensValidMove;
  * @author paulodamaso
  *
  */
-public final class OddsAndEvensGame implements Game<OddsAndEvensMove> {
+public final class OddsAndEvensGame implements Game {
 	
 	/**
 	 * <p> Evaluation of a {@link OddsAndEvensMove} implementation
 	 * 
 	 * @return evaluated {@link OddsAndEvensMove}: {@link OddsAndEvensValidMove} or {@link OddsAndEvensInvalidMove}
 	 */
-	public OddsAndEvensMove evaluate(OddsAndEvensMove move) {
-		if (move.number().intValue() >= 0 && move.number().intValue() <= 5) return move;
-		return new OddsAndEvensInvalidMove(move);
+	public OddsAndEvensMove evaluate(Move move) {
+		OddsAndEvensMove newMove = (OddsAndEvensMove)move;
+		if (newMove.number().intValue() >= 0 && newMove.number().intValue() <= 5) return newMove;
+		return new OddsAndEvensInvalidMove(newMove);
 	}
+
 
 }

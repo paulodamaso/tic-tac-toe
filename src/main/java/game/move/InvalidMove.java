@@ -27,17 +27,4 @@ public abstract class InvalidMove implements Move {
 	public PlayerInMatch player() {
 		return origin.player();
 	}
-	
-	@Override
-	public Match perform() {
-		return origin.player().match();
-	}
-
-//	@Override
-//	public Match match() {
-//		return origin.player().match();
-//	}
-	
-	
-
 }

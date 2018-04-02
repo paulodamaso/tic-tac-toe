@@ -26,15 +26,8 @@ public final class OddsAndEvensInvalidMove extends InvalidMove implements OddsAn
 		return this.move.player().match();
 	}
 
-//	@Override
-//	public OddsAndEvensMatch match() {
-//		return move.match();
-//	}
-
 	@Override
 	public Integer number() {
 		return move.number();
 	}
-	
-
 }

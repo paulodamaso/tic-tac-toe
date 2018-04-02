@@ -99,12 +99,5 @@ public class NullMoveTest {
 		assertEquals(1953, np.hashCode());		
 		
 	}
-	
-	@Test
-	public void matchTest() {
-		NullMove nm = new NullMove(new MockMatch(14), new MockPlayer());
-		assertEquals(new MockMatch(14), nm.match());
-		
-	}
 
 }

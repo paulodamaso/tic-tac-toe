@@ -23,7 +23,7 @@ public class Main {
 		String playerName = scanner.nextLine();
 		scanner.close();
 
-		Game<OddsAndEvensMove> game = new OddsAndEvensGame();
+		Game game = new OddsAndEvensGame();
 		Match match = new OddsAndEvensMatch(
 				new OddsAndEvensGamePlayer(playerName, new OddsAndEvensConsoleMoveGenerator()), 
 				new OddsAndEvensGamePlayer("Computer", new OddsAndEvensRandomNumberMoveGenerator()));

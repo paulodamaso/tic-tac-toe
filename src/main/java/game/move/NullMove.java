@@ -13,7 +13,7 @@ import game.player.PlayerInMatch;
  * 
  * @author paulodamaso
  */
-public final class NullMove implements Move {
+public final class NullMove extends InvalidMove	 {
 
 	private final Match match;
 	private final PlayerInMatch player;	
@@ -21,6 +21,7 @@ public final class NullMove implements Move {
 	public NullMove(Match match, PlayerInMatch player) {
 		this.match = match;
 		this.player = player;
+		super(this);
 	}
 
 	/* (non-Javadoc)
@@ -29,16 +30,6 @@ public final class NullMove implements Move {
 	@Override
 	public PlayerInMatch player() {
 		return this.player;
-	}
-
-	/**
-	 * <p> Returns the same match because a null move does not changes the match state ( @see Move#perform()).
-	 * 
-	 * @return the match of the move
-	 */
-	@Override
-	public Match perform() {
-		return this.match;
 	}
 
 	@Override
@@ -72,8 +63,9 @@ public final class NullMove implements Move {
 		return true;
 	}
 
-//	@Override
-//	public Match match() {
-//		return this.player.match();
-//	}	
+	@Override
+	public EvaluatedMove evaluate() {
+		return null;
+	}
+	
 }

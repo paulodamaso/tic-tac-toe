@@ -18,18 +18,4 @@ public interface Move {
 	 */
 	public PlayerInMatch player();
 	
-	/**
-	 * <p> Perform the move an return the new {@link Match} with the move performed.
-	 *  
-	 * @return {@link Match} representing the match state after the move.
-	 */
-	public Match perform() ;
-	
-//	/**
-//	 * <p> Return the {@link Match}
-//	 * 
-//	 * 
-//	 */
-//	public Match match();
-
 }
