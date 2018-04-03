@@ -1,6 +1,5 @@
 package mock;
 
-import game.match.Match;
 import game.move.Move;
 import game.player.PlayerInMatch;
 
@@ -24,9 +23,4 @@ public final class MockMove implements Move {
 		return this.player;
 	}
 
-	@Override
-	public Match perform() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

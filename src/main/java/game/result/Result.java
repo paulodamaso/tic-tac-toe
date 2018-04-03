@@ -1,7 +1,6 @@
 package game.result;
 
 import game.player.MatchPlayers;
-import game.player.NoPlayers;
 
 /**
  * <p> Interface modeling behaviors of the result of a match. Hold the winners of the match, 
@@ -9,7 +8,7 @@ import game.player.NoPlayers;
  * 
  * <p> The match must instantiate the results according to its rules; for example, 
  * a chess game does not have a partial result, therefore,  its implementation of the {@link Partial}
- * result interface must return {@link NoPlayers} in its winners and losers methods, meaning that there are no
+ * result interface must return an empty players in its winners and losers methods, meaning that there are no
  * winners or losers yet.
  * 
  * @author paulodamaso

@@ -15,7 +15,7 @@ import game.player.PlayerInMatch;
  * @author paulodamaso
  *
  */
-public abstract class InvalidMove implements Move {
+public abstract class InvalidMove implements EvaluatedMove {
 	
 	private final Move origin;
 

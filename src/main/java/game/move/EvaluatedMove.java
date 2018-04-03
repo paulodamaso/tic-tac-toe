@@ -18,6 +18,6 @@ public interface EvaluatedMove extends Move {
 	 *  
 	 * @return {@link Match} representing the match state after the move.
 	 */
-	public Match perform() ;
+	public abstract Match perform() ;
 		
 }

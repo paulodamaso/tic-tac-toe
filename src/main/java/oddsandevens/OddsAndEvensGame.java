@@ -27,8 +27,7 @@ public final class OddsAndEvensGame implements Game {
 	 */
 	public OddsAndEvensMove evaluate(Move move) {
 		OddsAndEvensMove newMove = (OddsAndEvensMove)move;
-		if (newMove.number().intValue() >= 0 && newMove.number().intValue() <= 5) return newMove;
-		return new OddsAndEvensInvalidMove(newMove);
+
 	}
 
 
