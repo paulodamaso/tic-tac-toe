@@ -1,23 +1,14 @@
 package oddsandevens.player;
 
-import game.move.generator.MoveGenerator;
 import game.player.GamePlayer;
-import oddsandevens.move.generator.OddsAndEvensMoveGenerator;
+import oddsandevens.action.OddsAndEvensAction;
 
-/**
- * <p> Player with a {@link MoveGenerator} for odds and evens.
- * 
- * @author paulodamaso
- *
- */
-public final class OddsAndEvensGamePlayer implements GamePlayer<OddsAndEvensPlayerInMatch> {
+public abstract class OddsAndEvensGamePlayer implements GamePlayer {
 	
 	private final String name;
-	private final OddsAndEvensMoveGenerator generator;
-	
-	public OddsAndEvensGamePlayer(String name, OddsAndEvensMoveGenerator generator) {
+
+	public OddsAndEvensGamePlayer(String name) {
 		this.name = name;
-		this.generator = generator;
 	}
 
 	@Override
@@ -26,14 +17,6 @@ public final class OddsAndEvensGamePlayer implements GamePlayer<OddsAndEvensPlay
 	}
 
 	@Override
-	public OddsAndEvensMoveGenerator generator() {
-		return this.generator;
-	}
-
-//	@Override
-//	public MoveGenerator<Player> generator() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
+	public abstract OddsAndEvensAction act(); 
 
 }

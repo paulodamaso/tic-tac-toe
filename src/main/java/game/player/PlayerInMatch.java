@@ -1,7 +1,7 @@
 package game.player;
 
+import game.action.ActionInMatch;
 import game.match.Match;
-import game.move.UnevaluatedMove;
 
 /**
  * <p> A player assigned to a {@link Match}
@@ -9,18 +9,18 @@ import game.move.UnevaluatedMove;
  * @author paulodamaso
  *
  */
-public interface PlayerInMatch extends Player {
+public interface PlayerInMatch extends GamePlayer {
 	
 	/**
 	 * <p> The match this player is assigned or playing. 
 	 */
-	public Match match();
+	public abstract Match match();
 	
-
 	/**
-	 * <p> An move attempt made by the player.
+	 * <p> An action made by the player.
+	 * 
 	 * 
 	 * @return
 	 */
-	public UnevaluatedMove move();
+	public abstract ActionInMatch act();
 }

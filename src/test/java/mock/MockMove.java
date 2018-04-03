@@ -1,18 +1,17 @@
 package mock;
 
-import game.move.Move;
+import game.action.Action;
 import game.player.PlayerInMatch;
 
 /**
- * <p> {@link Move} mock implementation for testing only.
+ * <p> {@link Action} mock implementation for testing only.
  * 
  * @author paulodamaso
  *
  */
-public final class MockMove implements Move {
+public final class MockMove implements Action {
 	
 	private final PlayerInMatch player;
-	
 	
 	public MockMove(PlayerInMatch player) {
 		this.player = player;

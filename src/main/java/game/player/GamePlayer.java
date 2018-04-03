@@ -1,21 +1,15 @@
 package game.player;
 
-import game.move.generator.MoveGenerator;
+import game.action.Action;
 
-/**
- * <p> A {@link Player} of a game. This interface implementations must define
- * which {@link MoveGenerator} this player will use for a particular game type.
- * 
- * @author paulodamaso
- *
- */
-public interface GamePlayer<P extends PlayerInMatch> extends Player {
-	
+public interface GamePlayer extends Player {
+
 	/**
-	 * <p> Returns the {@link MoveGenerator} of this player.
+	 * <p> An action made by the player.
+	 * 
 	 * 
 	 * @return
 	 */
-	public MoveGenerator<P> generator();
-
+	public abstract Action act();
+	
 }

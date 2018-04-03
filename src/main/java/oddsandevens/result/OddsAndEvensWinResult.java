@@ -13,22 +13,14 @@ import oddsandevens.player.OddsAndEvensPlayers;
  */
 public final class OddsAndEvensWinResult implements OddsAndEvensResult, Definitive{
 
-	private final Integer evens;	
-	private final Integer odds;
 	private final OddsAndEvensPlayers winners;
 	private final OddsAndEvensPlayers losers;
 	
-	public OddsAndEvensWinResult(OddsAndEvensPlayers winners, OddsAndEvensPlayers losers, Integer evens, Integer odds) {
-		this.evens = evens;
-		this.odds = odds;
+	public OddsAndEvensWinResult(OddsAndEvensPlayers winners, OddsAndEvensPlayers losers) {
 		this.winners = winners;
 		this.losers = losers;
 	}
 	
-	public Integer evens() { return evens; }
-	
-	public Integer odds() { return odds; }
-
 	@Override
 	public MatchPlayers winners() {
 		return this.winners;

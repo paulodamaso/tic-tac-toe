@@ -1,6 +1,5 @@
 package mock;
 
-import game.Game;
 import game.match.Match;
 import game.player.MatchPlayers;
 import game.result.Result;
@@ -57,14 +56,4 @@ public class MockMatch implements Match {
 			return false;
 		return true;
 	}
-
-	@Override
-	public Game game() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	
-	
-
 }

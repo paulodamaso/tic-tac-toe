@@ -1,7 +1,7 @@
 package tictactoe;
 
+import game.action.Action;
 import game.match.Match;
-import game.move.Move;
 import game.player.Player;
 import game.position.Position;
 
@@ -11,7 +11,7 @@ import game.position.Position;
  * @author paulodamaso
  *
  */
-public final class TicTacToeMove implements Move {
+public final class TicTacToeMove implements Action {
 	
 	private final Player player;
 	private final Position position;

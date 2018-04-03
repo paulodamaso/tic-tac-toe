@@ -1,11 +1,10 @@
 package game.match;
 
-import game.Game;
 import game.player.MatchPlayers;
 import game.result.Result;
 
 /**
- * <p> An interface representing a match of a particular {@link Game}.
+ * <p> An interface representing a match of a particular game.
  * 
  * @author paulodamaso
  *
@@ -17,25 +16,24 @@ public interface Match {
 	 * 
 	 * @return
 	 */
-	public Result result();
+	public abstract Result result();
 	
+	/**
+	 * <p> Starts the match and keep running while its result is partial.
+	 * 
+	 */
 	public default void start() {
 		Result res = null;
 		do {
-			res = players().next().move().evaluate().perform().result();
-		}while (res.partial());
+			res = null;
+		}while (players().next().act().evaluate().perform().result().partial());
 	}
 	
 	/**
 	 * <p> Collection of players playing the match.
+	 * 
 	 * @return
 	 */
-	public MatchPlayers players();
-	
-	/**
-	 * <p> Game of 
-	 * @return
-	 */
-	public Game game();
+	public abstract MatchPlayers players();
 	
 }

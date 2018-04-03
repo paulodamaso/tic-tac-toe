@@ -1,9 +1,10 @@
 package oddsandevens.result;
 
-import game.player.NoPlayers;
 import game.player.MatchPlayers;
+
 import game.result.Partial;
 import oddsandevens.match.OddsAndEvensMatch;
+import oddsandevens.player.OddsAndEvensPlayers;
 
 /**
  * <p> Partial result for an odds and evens match. Since these game does not allow
@@ -22,14 +23,14 @@ public final class OddsAndEvensPartialResult implements Partial, OddsAndEvensRes
 	}
 
 	@Override
-	public MatchPlayers winners() {
-		return new NoPlayers(this.match);
+	public OddsAndEvensPlayers winners() {
+		return new OddsAndEvensPlayers(null);
 	}
 
 
 	@Override
-	public MatchPlayers losers() {
-		return new NoPlayers(this.match);
+	public OddsAndEvensPlayers losers() {
+		return new OddsAndEvensPlayers(null);
 	}
 
 }
