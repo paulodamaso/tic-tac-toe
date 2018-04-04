@@ -1,9 +1,7 @@
 import java.util.Scanner;
 
-import game.match.Match;
-import oddsandevens.match.OddsAndEvensMatch;
-import oddsandevens.player.OddsAndEvensConsolePlayer;
-import oddsandevens.player.OddsAndEvensRandomNumberPlayer;
+import newGame.guess.GuessMatch;
+import newGame.player.SimplePlayer;
 
 /**
  * <p> Main class for games.
@@ -17,16 +15,9 @@ public class Main {
 		
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Escreva seu nome: ");
-		String playerName = scanner.nextLine();
 		
-
-		Match match = new OddsAndEvensMatch(
-				new OddsAndEvensConsolePlayer(playerName, scanner),
-				new OddsAndEvensRandomNumberPlayer("Dummy Bot")
-				);
-		match.start();
-		match.result().toString();
-		
+		GuessMatch guessMatch = new GuessMatch(new SimplePlayer(scanner.nextLine()));
+		System.out.println(guessMatch.play().result());
 		scanner.close();
 	}
 

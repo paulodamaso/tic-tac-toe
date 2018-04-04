@@ -27,7 +27,7 @@ public interface OddsAndEvensAction extends Action {
 	 * 
 	 *  <p> Evaluation rules for an odds and evens action:
 	 *  <ul>
-	 *  	<li> this.number must be integer </li>
+	 *  	<li> this.number must be integer (?) </li>
 	 *  	<li> this.number must be greater or equal to zero </li>
 	 *  	<li> this.number must be smaller or equal to five (humans just have five fingers)</li>
 	 *  </ul>
@@ -35,7 +35,7 @@ public interface OddsAndEvensAction extends Action {
 	 */
 	@Override
 	public default OddsAndEvensAction evaluate() {
-		if (number().intValue() % 1 == 0 && number().intValue() >= 0 && number().intValue() <= 5) return this;
+		if (number().intValue() >= 0 && number().intValue() <= 5) return this;
 		return new OddsAndEvensInvalidAction(this);
 	}
 }

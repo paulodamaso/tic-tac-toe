@@ -19,7 +19,7 @@ public class OddsAndEvensActionImplTest {
 	@Test
 	public void testNumber() {
 		//must return the number sent in constructor; iterate 100.000 times
-		for(int i = 0; i< 100000; i++) {
+		for(int i = 0; i<= 100000; i++) {
 			Integer integer = new Integer(new Double(Math.random()).intValue());
 			OddsAndEvensAction action = new OddsAndEvensActionImpl(integer);
 			assertEquals(integer, action.number());

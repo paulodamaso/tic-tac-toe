@@ -18,7 +18,7 @@ public class OddsAndEvensActionTest {
 	 * <p> {@link OddsAndEvensAction#evaluate()} test.
 	 *  <p> Evaluation rules for an odds and evens action:
 	 *  <ul>
-	 *  	<li> this.number must be integer </li>
+	 *  	<li> this.number must be integer (?)</li>
 	 *  	<li> this.number must be greater or equal to zero </li>
 	 *  	<li> this.number must be smaller or equal to five (humans just have five fingers)</li>
 	 *  </ul>
@@ -26,7 +26,10 @@ public class OddsAndEvensActionTest {
 	 */
 	@Test
 	public void testEvaluate() {
-		OddsAndEvensAction act = new OddsAndEvensActionImpl(new Integer(-1));
+		OddsAndEvensAction act = new OddsAndEvensActionImpl(new Integer("7"));
+		assertEquals(act.evaluate(), new OddsAndEvensInvalidAction(act));
+		
+		act = new OddsAndEvensActionImpl(new Integer(-1));
 		assertEquals(act.evaluate(), new OddsAndEvensInvalidAction(act));
 		
 		act = new OddsAndEvensActionImpl(new Integer(7));

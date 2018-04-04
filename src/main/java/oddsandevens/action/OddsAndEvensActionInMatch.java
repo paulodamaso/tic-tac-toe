@@ -1,11 +1,15 @@
 package oddsandevens.action;
 
 import game.action.ActionInMatch;
+import game.match.Match;
+import game.player.Player;
 import oddsandevens.match.OddsAndEvensMatch;
 import oddsandevens.player.OddsAndEvensPlayerInMatch;
 
 /**
- * <p> An odds and evens action in a match.
+ * <p> An odds and evens action associated to a match.
+ * 
+ * <p> Uses the {@link Match} stored in {@link Player} 
  * 
  * @author paulodamaso
  *
@@ -26,7 +30,6 @@ public final class OddsAndEvensActionInMatch implements ActionInMatch, OddsAndEv
 	}
 	
 	public OddsAndEvensActionInMatch evaluate() {
-		//evaluate this action in the context of that match
 		return new OddsAndEvensActionInMatch(origin.evaluate(), this.player);
 	}
 
