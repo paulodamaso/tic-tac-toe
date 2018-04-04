@@ -27,7 +27,7 @@ public final class OddsAndEvensPlayerInMatch implements PlayerInMatch {
 
 	@Override
 	public OddsAndEvensActionInMatch act() {
-		return new OddsAndEvensActionInMatch(player.act(), this.match);
+		return new OddsAndEvensActionInMatch(player.act(), this);
 	}
 
 	@Override

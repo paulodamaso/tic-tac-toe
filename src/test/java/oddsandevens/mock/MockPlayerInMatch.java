@@ -1,8 +1,9 @@
-package mock;
+package oddsandevens.mock;
 
-import game.action.UnevaluatedMove;
+import game.action.ActionInMatch;
 import game.match.Match;
 import game.player.PlayerInMatch;
+import mock.MockMatch;
 
 /**
  * <p> Mock {@link PlayerInMatch} for testing purposes.
@@ -10,7 +11,7 @@ import game.player.PlayerInMatch;
  * @author paulodamaso
  *
  */
-public class MockPlayerInMatch implements PlayerInMatch {
+public class MockPlayerInMatch implements OddsAndEvensPlayerInMatch {
 
 	@Override
 	public String name() {
@@ -23,7 +24,7 @@ public class MockPlayerInMatch implements PlayerInMatch {
 	}
 
 	@Override
-	public UnevaluatedMove act() {
+	public ActionInMatch act() {
 		// TODO Auto-generated method stub
 		return null;
 	}

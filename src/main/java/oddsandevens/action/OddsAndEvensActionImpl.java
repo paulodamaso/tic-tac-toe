@@ -1,5 +1,11 @@
 package oddsandevens.action;
 
+/**
+ * <p> Simple implementation for an odds and evens action.
+ * 
+ * @author paulodamaso
+ *
+ */
 public final class OddsAndEvensActionImpl implements OddsAndEvensAction {
 
 	private final Integer number;

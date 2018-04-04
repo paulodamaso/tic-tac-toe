@@ -1,8 +1,8 @@
 package oddsandevens.action;
 
 import game.action.ActionInMatch;
-import game.match.Match;
 import oddsandevens.match.OddsAndEvensMatch;
+import oddsandevens.player.OddsAndEvensPlayerInMatch;
 
 /**
  * <p> An odds and evens action in a match.
@@ -13,28 +13,26 @@ import oddsandevens.match.OddsAndEvensMatch;
 public final class OddsAndEvensActionInMatch implements ActionInMatch, OddsAndEvensAction {
 
 	private final OddsAndEvensAction origin;
-	private final OddsAndEvensMatch match;
+	private final OddsAndEvensPlayerInMatch player;
 	
-	public OddsAndEvensActionInMatch(OddsAndEvensAction origin, OddsAndEvensMatch match) {
+	public OddsAndEvensActionInMatch(OddsAndEvensAction origin, OddsAndEvensPlayerInMatch player) {
 		this.origin = origin;
-		this.match = match;
+		this.player = player;
 	}
 
 	@Override
-	public Match perform() {
-		// TODO Auto-generated method stub
-		return null;
+	public OddsAndEvensMatch perform() {
+		return new OddsAndEvensMatch(origin, player);
 	}
 	
 	public OddsAndEvensActionInMatch evaluate() {
 		//evaluate this action in the context of that match
-		return new OddsAndEvensActionInMatch(origin.evaluate(), this.match);
+		return new OddsAndEvensActionInMatch(origin.evaluate(), this.player);
 	}
 
 	@Override
 	public Integer number() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.origin.number();
 	}
 
 }
