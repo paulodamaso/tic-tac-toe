@@ -4,12 +4,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.Test;
 
-import newGame.guess.GuessActionImpl;
-import newGame.guess.GuessMatch;
-import newGame.guess.GuessPlayer;
-import newGame.guess.InvalidGuessAction;
-import newGame.player.SimplePlayer;
+import game.player.SimplePlayer;
 
+/**
+ * <p> Tests for {@link GuessAction} class.
+ * 
+ * @author paulodamaso
+ *
+ */
 public class GuessActionTest {
 
 	public GuessActionTest() {

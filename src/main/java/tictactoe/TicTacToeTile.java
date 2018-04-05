@@ -1,7 +1,7 @@
 package tictactoe;
 
-import game.board.tile.InvalidTile;
-import game.board.tile.Tile;
+import oldgame.board.tile.InvalidTile;
+import oldgame.board.tile.Tile;
 
 /**
  * <p> A tile abstraction in a tic tac toe game.

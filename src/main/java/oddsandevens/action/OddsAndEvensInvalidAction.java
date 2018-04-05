@@ -1,6 +1,6 @@
 package oddsandevens.action;
 
-import game.action.InvalidAction;
+import oldgame.action.InvalidAction;
 
 /**
  * <p> 

@@ -1,8 +1,8 @@
 package oddsandevens.player;
 
-import game.player.PlayerInMatch;
 import oddsandevens.action.OddsAndEvensActionInMatch;
 import oddsandevens.match.OddsAndEvensMatch;
+import oldgame.player.PlayerInMatch;
 
 /**
  * <p> Decorator for 

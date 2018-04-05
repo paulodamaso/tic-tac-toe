@@ -1,7 +1,7 @@
 package oddsandevens.action;
 
-import game.action.Action;
-import game.action.InvalidAction;
+import oldgame.action.Action;
+import oldgame.action.InvalidAction;
 
 /**
  * <p> Interface for {@link Action} of an odds and evens game.

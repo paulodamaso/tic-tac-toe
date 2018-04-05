@@ -1,7 +1,7 @@
 package tictactoe;
 
-import game.player.Player;
-import game.player.MatchPlayers;
+import oldgame.player.MatchPlayers;
+import oldgame.player.Player;
 
 public final class TicTacToePlayers implements MatchPlayers {
 	

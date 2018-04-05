@@ -1,9 +1,9 @@
 package tictactoe;
 
-import game.action.Action;
-import game.match.Match;
-import game.player.Player;
-import game.position.Position;
+import oldgame.action.Action;
+import oldgame.match.Match;
+import oldgame.player.Player;
+import oldgame.position.Position;
 
 /**
  * <p> A tic tac toe move, where a player put his mark in a tile .

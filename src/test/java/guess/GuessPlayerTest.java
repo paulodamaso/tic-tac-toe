@@ -2,9 +2,9 @@ package guess;
 
 import org.junit.Test;
 
-import newGame.guess.GuessMatch;
-import newGame.guess.GuessPlayer;
-import newGame.player.SimplePlayer;
+import game.player.SimplePlayer;
+import guess.GuessMatch;
+import guess.GuessPlayer;
 
 public class GuessPlayerTest {
 

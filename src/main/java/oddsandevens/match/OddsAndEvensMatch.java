@@ -3,7 +3,6 @@ package oddsandevens.match;
 import java.util.HashMap;
 import java.util.Map;
 
-import game.match.Match;
 import oddsandevens.action.OddsAndEvensAction;
 import oddsandevens.player.OddsAndEvensGamePlayer;
 import oddsandevens.player.OddsAndEvensPlayerInMatch;
@@ -11,6 +10,7 @@ import oddsandevens.player.OddsAndEvensPlayers;
 import oddsandevens.result.OddsAndEvensPartialResult;
 import oddsandevens.result.OddsAndEvensResult;
 import oddsandevens.result.OddsAndEvensWinResult;
+import oldgame.match.Match;
 
 /**
  * <p> An odds and evens match.

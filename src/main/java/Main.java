@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
-import newGame.guess.GuessMatch;
-import newGame.player.SimplePlayer;
+import game.player.SimplePlayer;
+import guess.GuessMatch;
 
 /**
  * <p> Main class for games.

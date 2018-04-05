@@ -1,7 +1,7 @@
 package tictactoe;
 
-import game.board.tile.TileContent;
-import game.player.Player;
+import oldgame.board.tile.TileContent;
+import oldgame.player.Player;
 
 /**
  * <p> The content of a tic tac toe game tile. In this game, the content of a tile

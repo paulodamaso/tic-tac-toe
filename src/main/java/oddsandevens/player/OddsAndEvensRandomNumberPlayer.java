@@ -1,8 +1,8 @@
 package oddsandevens.player;
 
-import game.player.Player;
 import oddsandevens.action.OddsAndEvensAction;
 import oddsandevens.action.OddsAndEvensActionImpl;
+import oldgame.player.Player;
 
 /**
  * <p> An odds and evens {@link Player} which generates input from a random number generator.

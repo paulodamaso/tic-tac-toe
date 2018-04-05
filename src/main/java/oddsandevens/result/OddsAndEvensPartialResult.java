@@ -1,10 +1,9 @@
 package oddsandevens.result;
 
-import game.player.MatchPlayers;
-
-import game.result.Partial;
 import oddsandevens.match.OddsAndEvensMatch;
 import oddsandevens.player.OddsAndEvensPlayers;
+import oldgame.player.MatchPlayers;
+import oldgame.result.Partial;
 
 /**
  * <p> Partial result for an odds and evens match. Since these game does not allow

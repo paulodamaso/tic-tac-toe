@@ -1,9 +1,9 @@
 package tictactoe;
 
-import game.match.Match;
-import game.player.Player;
-import game.player.MatchPlayers;
-import game.player.SimplePlayers;
+import oldgame.match.Match;
+import oldgame.player.MatchPlayers;
+import oldgame.player.Player;
+import oldgame.player.SimplePlayers;
 
 /**
  * <p> Class representing a match of tic-tac-toe.

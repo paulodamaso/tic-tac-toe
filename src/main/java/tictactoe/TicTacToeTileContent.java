@@ -1,7 +1,7 @@
 package tictactoe;
 
-import game.board.tile.TileContent;
-import game.player.Player;
+import oldgame.board.tile.TileContent;
+import oldgame.player.Player;
 
 public interface TicTacToeTileContent extends TileContent {
 	

@@ -1,8 +1,8 @@
 package oddsandevens.result;
 
-import game.player.MatchPlayers;
-import game.result.Definitive;
 import oddsandevens.player.OddsAndEvensPlayers;
+import oldgame.player.MatchPlayers;
+import oldgame.result.Definitive;
 
 /**
  * <p> A result of an odds and evens game with win condition for one player. This result receives

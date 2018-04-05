@@ -1,10 +1,10 @@
 package oddsandevens.action;
 
-import game.action.ActionInMatch;
-import game.match.Match;
-import game.player.Player;
 import oddsandevens.match.OddsAndEvensMatch;
 import oddsandevens.player.OddsAndEvensPlayerInMatch;
+import oldgame.action.ActionInMatch;
+import oldgame.match.Match;
+import oldgame.player.Player;
 
 /**
  * <p> An odds and evens action associated to a match.

@@ -1,7 +1,7 @@
 package tictactoe;
 
-import game.board.tile.EmptyTile;
-import game.board.tile.TileContent;
+import oldgame.board.tile.EmptyTile;
+import oldgame.board.tile.TileContent;
 
 /**
  * <p> An empty tile for a tic tac toe game

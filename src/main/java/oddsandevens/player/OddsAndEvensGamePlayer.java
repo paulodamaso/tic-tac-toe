@@ -1,7 +1,7 @@
 package oddsandevens.player;
 
-import game.player.GamePlayer;
 import oddsandevens.action.OddsAndEvensAction;
+import oldgame.player.GamePlayer;
 
 public abstract class OddsAndEvensGamePlayer implements GamePlayer {
 	

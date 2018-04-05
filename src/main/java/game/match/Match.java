@@ -1,39 +1,41 @@
 package game.match;
 
-import game.player.MatchPlayers;
+import game.action.Action;
+import game.player.MatchPlayer;
+import game.player.Player;
 import game.result.Result;
 
 /**
- * <p> An interface representing a match of a particular game.
+ * <p>
+ * A match of some game.
+ * 
+ * <p>
+ * A match is a contest where players compete against each other in a particular
+ * game.
+ * 
+ * <p> The current match state is obtained through the {@link #result()} method: it returns an 
+ * {@link Result} instance depicting the match internal state at some point in time. It may be 
+ * used to track intermediate match states, showing  which {@link MatchPlayer} is nearer to 
+ * achieve victory conditions when applicable, for example.
+ * 
+ * <p>
+ * The {@link #play()} method start the match and perform the loop present in every match of every 
+ * game: the {@link Player}s alternate themselves making {@link Action}s until the match is over 
+ * ({@link Result} of the match is not partial). Each match implementation must provide this 
+ * behavior; it can change from game to game. After its execution, the method returns the final
+ * {@link Result} of the match, with the game ending information.
  * 
  * @author paulodamaso
  *
  */
 public interface Match {
-	
+
 	/**
-	 * <p> Returns the {@link Result} of the match (checks winning conditions and game ending conditions).
+	 * <p>
 	 * 
 	 * @return
 	 */
-	public abstract Result result();
-	
-	/**
-	 * <p> Starts the match and keep running while its result is partial.
-	 * 
-	 */
-	public default void start() {
-		Result res = null;
-		do {
-			res = null;
-		}while (players().next().act().evaluate().perform().result().partial());
-	}
-	
-	/**
-	 * <p> Collection of players playing the match.
-	 * 
-	 * @return
-	 */
-	public abstract MatchPlayers players();
-	
+	public Result result();
+
+	public Result play();
 }

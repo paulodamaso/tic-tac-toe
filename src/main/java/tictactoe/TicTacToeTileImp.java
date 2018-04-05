@@ -1,7 +1,7 @@
 package tictactoe;
 
-import game.board.tile.Tile;
-import game.board.tile.TileContent;
+import oldgame.board.tile.Tile;
+import oldgame.board.tile.TileContent;
 
 /**
  * <p> {@link Tile} implementation for a tic tac toe game.

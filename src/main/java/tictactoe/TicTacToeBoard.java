@@ -4,15 +4,15 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import game.board.Board;
-import game.board.tile.EmptyTile;
-import game.board.tile.Tile;
-import game.board.tile.TileContent;
-import game.position.BiDimensionalPosition;
-import game.position.Position;
-import game.result.DrawResult;
-import game.result.Result;
-import game.result.WinResult;
+import oldgame.board.Board;
+import oldgame.board.tile.EmptyTile;
+import oldgame.board.tile.Tile;
+import oldgame.board.tile.TileContent;
+import oldgame.position.BiDimensionalPosition;
+import oldgame.position.Position;
+import oldgame.result.DrawResult;
+import oldgame.result.Result;
+import oldgame.result.WinResult;
 
 /**
  * <p> A tic tac toe game board.

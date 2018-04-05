@@ -1,6 +1,6 @@
 package oddsandevens.result;
 
-import game.result.Result;
+import oldgame.result.Result;
 
 /**
  * <p> A result for an odds and evens match. It specializes the {@link Result} family of interfaces,

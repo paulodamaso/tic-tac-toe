@@ -2,9 +2,9 @@ package oddsandevens.player;
 
 import java.util.Scanner;
 
-import game.player.Player;
 import oddsandevens.action.OddsAndEvensAction;
 import oddsandevens.action.OddsAndEvensActionImpl;
+import oldgame.player.Player;
 
 /**
  * <p> An odds and evens {@link Player} which receives input from the console

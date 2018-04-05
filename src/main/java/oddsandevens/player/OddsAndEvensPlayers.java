@@ -5,9 +5,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ListIterator;
 
-import game.player.MatchPlayers;
-import game.player.Player;
 import oddsandevens.match.OddsAndEvensMatch;
+import oldgame.player.MatchPlayers;
+import oldgame.player.Player;
 
 /**
  * <p> Odds and even {@link Player} set.

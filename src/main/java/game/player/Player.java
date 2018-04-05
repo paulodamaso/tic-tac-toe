@@ -1,7 +1,7 @@
 package game.player;
 
 /**
- * <p> Class representing a player.
+ * <p> The higher abstraction of a player in a gaming context.
  * 
  * @author paulodamaso
  *
@@ -9,10 +9,10 @@ package game.player;
 public interface Player {
 
 	/**
-	 * <p> The player name.
+	 * <p>
+	 * Returns the name of this player.
 	 * 
-	 * @return
+	 * @return name of the player
 	 */
 	public String name();
-
 }

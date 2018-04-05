@@ -1,7 +1,7 @@
 package tictactoe;
 
-import game.board.tile.InvalidTile;
-import game.board.tile.TileContent;
+import oldgame.board.tile.InvalidTile;
+import oldgame.board.tile.TileContent;
 
 public class TicTacToeInvalidTile implements InvalidTile, TicTacToeTile {
 
