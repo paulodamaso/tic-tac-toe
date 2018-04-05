@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.Test;
 
-import newGame.guess.GuessAction;
+import newGame.guess.GuessActionImpl;
 import newGame.guess.GuessMatch;
 import newGame.guess.GuessPlayer;
 import newGame.guess.GuessResult;
@@ -21,7 +21,7 @@ public class GuessMatchTest {
 		GuessMatch match = new GuessMatch(new SimplePlayer("The One"));
 		
 		//the match have not ended yet
-		assertEquals(new GuessResult("O jogo ainda não acabou"), match.result());
+		assertEquals(new GuessResult("O jogo ainda nï¿½o acabou"), match.result());
 		
 		//the match have already ended, win
 		//faking guess match
@@ -29,7 +29,7 @@ public class GuessMatchTest {
 		match = new GuessMatch(7);
 		GuessPlayer one = new GuessPlayer(player, match);
 		//faking action
-		GuessAction action = new GuessAction(match, "7");
+		GuessActionImpl action = new GuessActionImpl(match, "7", one);
 		match = action.perform();
 		assertEquals(new GuessResult("Caramba acertou :D"), match.result());
 		
@@ -37,7 +37,7 @@ public class GuessMatchTest {
 		match = new GuessMatch(7);
 		one = new GuessPlayer(player, match);
 		//faking action
-		action = new GuessAction(match, "21");
+		action = new GuessActionImpl(match, "21", one);
 		match = action.perform();
 		//the match have already ended, loss
 		assertEquals(new GuessResult("Xi errou :/"), match.result());

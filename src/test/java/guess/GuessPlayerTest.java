@@ -19,7 +19,7 @@ public class GuessPlayerTest {
 		GuessMatch match = new GuessMatch(player);
 		match = new GuessMatch(7);
 		GuessPlayer one = new GuessPlayer(player, match);
-		one.act();
+		//one.act();
 	}
 
 }

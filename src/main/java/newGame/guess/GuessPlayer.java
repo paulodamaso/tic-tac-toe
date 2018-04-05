@@ -21,6 +21,10 @@ public final class GuessPlayer implements Player {
 
 	@Override
 	public GuessAction act() {
-		return new GuessAction( match, new Scanner(System.in).nextLine());
+		return new GuessActionImpl( match, new Scanner(System.in).nextLine(), this);
+	}
+	
+	public Player origin() {
+		return this.origin;
 	}
 }

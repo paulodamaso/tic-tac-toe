@@ -5,9 +5,11 @@ import newGame.result.Result;
 public final class GuessResult implements Result {
 
 	private final String result; 
+	private final GuessMatch match;
 	
-	public GuessResult(String result) {
+	public GuessResult(String result, GuessMatch match) {
 		this.result = result;
+		this.match= match;
 	}
 	
 	@Override
@@ -30,7 +32,7 @@ public final class GuessResult implements Result {
 	}
 
 	public String result() {
-		return result;
+		return result + " \nO número escolhido foi: " +match.number();
 	}
 
 }

@@ -5,13 +5,12 @@ import java.util.Collection;
 
 import newGame.match.Match;
 import newGame.player.Player;
-import newGame.result.Result;
 
 public final class GuessMatch implements Match {
 	
 	private final GuessPlayers players;
 	private final Integer number;
-	private final Collection<GuessAction> actions;
+	private final Collection<GuessActionImpl> actions;
 
 	public GuessMatch(Player player) {
 		this.players = new GuessPlayers(this, player);
@@ -25,7 +24,7 @@ public final class GuessMatch implements Match {
 		this.actions = new ArrayList<>(1);
 	}
 
-	public GuessMatch(GuessMatch match, GuessAction action) {
+	public GuessMatch(GuessMatch match, GuessActionImpl action) {
 		this.players = match.players;
 		this.number = match.number;
 		this.actions = new ArrayList<>(1);
@@ -38,12 +37,12 @@ public final class GuessMatch implements Match {
 		if (actions.isEmpty()) {
 			//player not played yet
 			//game is not over
-			return new GuessResult("O jogo ainda não acabou");
+			return new GuessResult("O jogo ainda nï¿½o acabou", this);
 		} else {
 			if (actions.iterator().next().guess().equals(number))
-				return new GuessResult("Caramba acertou :D");
+				return new GuessResult("Caramba acertou :D", this);
 			
-			return new GuessResult("Xi errou :/");
+			return new GuessResult("Xi errou :/", this);
 		}
 	}
 
@@ -51,6 +50,10 @@ public final class GuessMatch implements Match {
 	public GuessResult play() {
 		System.out.println("Guess my number: ");
 		return players.next().act().evaluate().perform().result();
+	}
+	
+	public Integer number() {
+		return this.number;
 	}
 
 }

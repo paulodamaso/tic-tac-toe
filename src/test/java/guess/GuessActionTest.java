@@ -4,9 +4,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.Test;
 
-import newGame.action.InvalidAction;
-import newGame.guess.GuessAction;
+import newGame.guess.GuessActionImpl;
 import newGame.guess.GuessMatch;
+import newGame.guess.GuessPlayer;
+import newGame.guess.InvalidGuessAction;
 import newGame.player.SimplePlayer;
 
 public class GuessActionTest {
@@ -18,16 +19,20 @@ public class GuessActionTest {
 	@Test
 	public void evaluateTest() {
 		
+		SimplePlayer roamer = new SimplePlayer("Roamer");
+		GuessMatch match = new GuessMatch(roamer);
+		GuessPlayer gp = new GuessPlayer(roamer, match);
+		
 		//passing an invalid number (text), must return invalid action
-		GuessAction action = new GuessAction(new GuessMatch(new SimplePlayer("Roamer")), "Stringy");
-		assertEquals(new InvalidAction(action), action.evaluate());
+		GuessActionImpl action = new GuessActionImpl(match, "Stringy", gp );
+		assertEquals(new InvalidGuessAction(action), action.evaluate());
 		
 		//passing an invalid integer (decimal), must return invalid action
-		action = new GuessAction(new GuessMatch(new SimplePlayer("Roamer")), "4.75");
-		assertEquals(new InvalidAction(action), action.evaluate());
+		action = new GuessActionImpl(match, "4.75", gp);
+		assertEquals(new InvalidGuessAction(action), action.evaluate());
 		
 		//passing a valid number
-		action = new GuessAction(new GuessMatch(new SimplePlayer("Roamer")), "10");
+		action = new GuessActionImpl(match, "10", gp);
 		assertEquals(action, action.evaluate());
 	}
 	
