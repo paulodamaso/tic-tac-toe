@@ -5,10 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.Test;
 
 import game.player.SimplePlayer;
-import guess.GuessActionImpl;
-import guess.GuessMatch;
-import guess.GuessPlayer;
-import guess.GuessResult;
+import oogame.impl.GuessActionImpl;
+import oogame.impl.GuessMatch;
+import oogame.impl.GuessPlayer;
+import oogame.impl.GuessResult;
 
 /**
  * <p> {@link GuessMatch} tests.

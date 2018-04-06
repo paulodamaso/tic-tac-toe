@@ -5,6 +5,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.Test;
 
 import game.player.SimplePlayer;
+import oogame.impl.GuessAction;
+import oogame.impl.GuessActionImpl;
+import oogame.impl.GuessMatch;
+import oogame.impl.GuessPlayer;
+import oogame.impl.InvalidGuessAction;
 
 /**
  * <p> Tests for {@link GuessAction} class.

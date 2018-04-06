@@ -1,6 +1,7 @@
-package guess;
+package oogame.impl;
 
-import game.result.Result;
+
+import oogame.Result;
 
 public final class GuessResult implements Result {
 
@@ -15,5 +16,5 @@ public final class GuessResult implements Result {
 	public String result() {
 		return result + " \nThe chosen number was: " + match.number();
 	}
-
+	
 }

@@ -3,8 +3,8 @@ package guess;
 import org.junit.Test;
 
 import game.player.SimplePlayer;
-import guess.GuessMatch;
-import guess.GuessPlayer;
+import oogame.impl.GuessMatch;
+import oogame.impl.GuessPlayer;
 
 public class GuessPlayerTest {
 
