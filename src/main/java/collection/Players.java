@@ -1,6 +1,8 @@
-package game.player;
+package collection;
 
 import game.match.Match;
+import game.player.MatchPlayer;
+import game.player.Player;
 
 /**
  * <p> Set of players which are playing a {@link Match}.
@@ -27,21 +29,21 @@ public interface Players {
 	 *            player to be added to this set
 	 * @return new player added to this set,
 	 */
-	public MatchPlayer add(Player player);
+	public Player add(Player player);
 
 	/**
 	 * <p> Next player to play.
 	 * 
 	 * @return next {@link Player} in turn
 	 */
-	public MatchPlayer next();
+	public Player next();
 
 	/**
 	 * <p> {@link Player} which played last turn. 
 	 * 
 	 * @return 
 	 */
-	public MatchPlayer previous();
+	public Player previous();
 	
 
 }

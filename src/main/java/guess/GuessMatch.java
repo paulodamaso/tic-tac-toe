@@ -34,6 +34,27 @@ public final class GuessMatch implements Match {
 	@Override
 	public GuessResult result() {
 
+		/* new Result(
+		 * 		new Equals(
+		 * 			new Guess(
+		 * 				new Player(
+		 * 					players.next(),
+		 * 					this
+		 * 				).act()
+		 * 			)
+		 * new Equals(
+		 * 	new Guess(
+		 * 		action.next(),
+		 * 		
+		 * 		)
+		 * 	).value()
+		 * , number)
+		 * new Result(
+		 * )
+		 */
+		/*
+		 * @todo #11 avoid fluent interfacing in match.result()
+		 */
 		if (actions.isEmpty()) {
 			// player not played yet
 			// game is not over
@@ -48,6 +69,37 @@ public final class GuessMatch implements Match {
 
 	@Override
 	public GuessResult play() {
+		/*
+		 * players.next().act().evaluate().perform().result();
+		 *
+		 * new GuessResult( //result
+		 * 		new GuessMatch( //perform
+		 * 			oldMatch, 
+		 * 			new EvaluatedAction(
+		 * 				new GuessActionImpl(//act
+		 * 					this,
+	 * 						new NextPlayer(//next
+	 * 							this.players //players
+	 * 						),
+	 * 						this
+	 * 					)//.evaluate()
+		 * 			)//.perform()
+		 * 		)//.result()
+		 * 	)//.something()
+		 * );
+		 * 		new GuessMatch( //perform
+		 * new GuessResult(
+		 * 		new GuessMatch(
+		 * 			new EvaluatedAction(
+		 * 				new GuessPlayer(
+		 * 					players.next()
+		 * 				).act()
+		 * 			)
+		 * 		this)
+		 */
+		/*
+		 * @todo #11 avoid fluent interfacing in match.play()
+		 */
 		System.out.println("Guess my number: ");
 		return players.next().act().evaluate().perform().result();
 	}
