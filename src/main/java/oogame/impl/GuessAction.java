@@ -13,9 +13,6 @@ public interface GuessAction extends Action {
 
 	@Override
 	public abstract GuessAction evaluate();
-
-	@Override
-	public abstract GuessMatch perform();
 	
-	public abstract Integer value();
+	public abstract String value();
 }

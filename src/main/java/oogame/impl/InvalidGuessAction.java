@@ -1,6 +1,8 @@
 package oogame.impl;
 
 import oogame.InvalidAction;
+import oogame.Match;
+import oogame.Player;
 
 public final class InvalidGuessAction implements GuessAction, InvalidAction {
 
@@ -15,6 +17,18 @@ public final class InvalidGuessAction implements GuessAction, InvalidAction {
 		return this;
 	}
 
+	@Override
+	public Player player() {
+		return origin.player();
+	}
 
+	@Override
+	public Match match() {
+		return origin.match();
+	}
 
+	@Override
+	public String value() {
+		return origin.value();
+	}
 }

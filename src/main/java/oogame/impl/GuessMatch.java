@@ -29,10 +29,17 @@ public final class GuessMatch implements Match {
 	@Override
 	public GuessResult result() {
 
+		/*
+		 * @todo #11 avoid fluent interfaces in guessmatch.result()
+		 */
+		/*
+		 * @todo #9 who should define the winner? the match or the result?
+		 */
+		Integer guess = this.actions.iterator().next().value();
 		return 
-				(this.actions.iterator().next().value().intValue() == this.number.intValue()) ? 
-					new GuessResult("Wow, you've guessed the number! :D", this) :
-					new GuessResult("Oh no, you're wrong :/", this)
+				( guess.intValue() == this.number.intValue()) ? 
+					new GuessResult("Wow, you've guessed the number! :D", this.number, guess) :
+					new GuessResult("Oh no, you're wrong :/", this.number, guess)
 					;
 	}
 
@@ -47,15 +54,12 @@ public final class GuessMatch implements Match {
 
 				new GuessMatch(
 						this, 
-						new GuessActionImpl(
-								this, 
+							new EvaluatedAction(
 								new GuessPlayer(
 										players.next(),
 										this
-										)
-								)
-							.evaluate()
-						).result()
-				;
+										).act().evaluate()
+								).perform()
+							).result();
 	}
 }

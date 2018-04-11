@@ -6,31 +6,35 @@ package oogame.impl;
  * @author paulodamaso
  *
  */
-public final class GuessActionImpl implements GuessAction {
+public final class SimpleGuessAction implements GuessAction {
 
 	private final GuessMatch match;
 	private final GuessPlayer player;
+	private final String value;
 
-	public GuessActionImpl(GuessMatch guessMatch, GuessPlayer player) {
-		this.match = guessMatch;
+	public SimpleGuessAction(GuessPlayer player, String value) {
+		this.match = player.match();
 		this.player = player;
+		this.value = value;
+	}
+	
+	public SimpleGuessAction(GuessPlayer player) {
+		/*
+		 * @todo #15 SimpleGuessAction ctor should not use null.
+		 */
+		this(player, null);
 	}
 
 
 	@Override
 	public GuessAction evaluate() {
 		try {
-			Integer.parseInt(player.act());
+			Integer.parseInt(value);
 		} catch (Exception e) {
 			return new InvalidGuessAction(this);
 		}
 
 		return this;
-	}
-
-	@Override
-	public GuessMatch perform() {
-		return new GuessMatch(this.match, this);
 	}
 
 	@Override
@@ -41,6 +45,12 @@ public final class GuessActionImpl implements GuessAction {
 	@Override
 	public GuessMatch match() {
 		return this.match;
+	}
+
+
+	@Override
+	public String value() {
+		return this.value;
 	}
 
 }

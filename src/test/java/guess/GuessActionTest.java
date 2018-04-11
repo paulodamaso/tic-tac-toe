@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import game.player.SimplePlayer;
 import oogame.impl.GuessAction;
-import oogame.impl.GuessActionImpl;
+import oogame.impl.SimpleGuessAction;
 import oogame.impl.GuessMatch;
 import oogame.impl.GuessPlayer;
 import oogame.impl.InvalidGuessAction;
@@ -31,15 +31,15 @@ public class GuessActionTest {
 		GuessPlayer gp = new GuessPlayer(roamer, match);
 		
 		//passing an invalid number (text), must return invalid action
-		GuessActionImpl action = new GuessActionImpl(match, "Stringy", gp );
+		SimpleGuessAction action = new SimpleGuessAction(match, "Stringy", gp );
 		assertEquals(new InvalidGuessAction(action), action.evaluate());
 		
 		//passing an invalid integer (decimal), must return invalid action
-		action = new GuessActionImpl(match, "4.75", gp);
+		action = new SimpleGuessAction(match, "4.75", gp);
 		assertEquals(new InvalidGuessAction(action), action.evaluate());
 		
 		//passing a valid number
-		action = new GuessActionImpl(match, "10", gp);
+		action = new SimpleGuessAction(match, "10", gp);
 		assertEquals(action, action.evaluate());
 	}
 	

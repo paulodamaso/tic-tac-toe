@@ -28,9 +28,8 @@ public final class GuessPlayer implements MatchPlayer {
 		return this.origin.name();
 	}
 
-	public String act() {
-		return new Scanner(System.in).nextLine();
-				
+	public GuessAction act() {
+		return new SimpleGuessAction(this, new Scanner(System.in).nextLine());
 	}
 
 	public Player origin() {

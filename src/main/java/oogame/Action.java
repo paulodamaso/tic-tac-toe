@@ -40,15 +40,6 @@ public interface Action {
 
 	/**
 	 * <p>
-	 * Perform the action to a match an return the new {@link Match} with the action
-	 * results.
-	 * 
-	 * @return {@link Match} representing the match state after the action.
-	 */
-	public abstract Match perform();
-
-	/**
-	 * <p>
 	 * The player which made this action.
 	 * 
 	 * @return {@link Player} which made this action.

@@ -1,9 +1,7 @@
 package guess;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
-import game.player.MatchPlayer;
 import game.player.Player;
 import game.player.Players;
 
